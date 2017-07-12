@@ -9,6 +9,9 @@ class StudentValidator:
         else:
             return user_pwd == result[0].usr_pwd
 
+    def can_register(self, user_name, user_pwd, user_pwd_repeat):
+        return len(user_name) < 20 & user_pwd == user_pwd_repeat
+
 class StudentEdit(Students):
     def change_basic_info(self,user, id, name, age, birthday, university, gpa, ranking, comment, email, phone, first, second, third, file):
         stu = Students.objects.get(usr_name=user)
