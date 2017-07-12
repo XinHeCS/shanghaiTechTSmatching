@@ -1,12 +1,13 @@
-from django.db.models import F
-
 from ..models import Students
-from django.db import connection
 
-class StudentValidator(Students):
+class StudentValidator:
     # test function
     def can_login(self, user_name, user_pwd):
-        return user_pwd == Students.objects.get(user_name = user_name).usr_pwd
+        result = Students.objects.get(usr_name=user_name)
+        if not result:
+            return False
+        else:
+            return user_pwd == result[0].usr_pwd
 
 class StudentEdit(Students):
     def change_basic_info(self,user, id, name, age, birthday, university, gpa, ranking, comment, email, phone, first, second, third, file):

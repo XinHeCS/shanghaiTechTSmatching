@@ -1,7 +1,7 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
+from .forms import LoginForm
 from .model_tools.stu_db import StudentValidator
-from .forms import LoginForm, RegisterForm
 
 # Create your views here.
 def stu_login(request):
