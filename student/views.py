@@ -23,7 +23,7 @@ def stu_login(request):
     else:
         form = LoginForm()
 
-    return render(request, 'stu_login.html', {
+    return render(request, 'students/stu_login.html', {
         'form': form
     })
 
