@@ -30,4 +30,5 @@ class StudentEdit(Students):
         stu.usr_pwd = usr_pwd
 
     def register(self, usr, usr_pwd, Email):
+        pass
 
