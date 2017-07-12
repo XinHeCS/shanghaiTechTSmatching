@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from .forms import RegisterForm, LoginForm
 
+from django.http import HttpResponse
+
 
 # Create your views here.
 def stu_login(request):

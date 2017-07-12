@@ -16,8 +16,9 @@ class Students(models.Model):
     first_teacher = models.CharField(max_length=20)
     second_teacher = models.CharField(max_length=20)
     third_teacher = models.CharField(max_length=20)
-    usr_name = models.CharField(primary_key=True, max_length=15)
-    usr_pwd = models.CharField(max_length=15)
+    usr_name = models.CharField(primary_key=True, max_length=15, default='test')
+    usr_pwd = models.CharField(max_length=15, default='')
+
 class Selection(models.Model):
     student = models.ManyToManyField(Students,related_name="student")
     first_teacher = models.ManyToManyField('teacher.Teachers', related_name="teacher1")

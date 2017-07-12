@@ -8,10 +8,6 @@
       background-color: #eee;
     }
 
-    .container {
-        text-align: center;
-    }
-
     .form-signin {
       max-width: 330px;
       padding: 15px;
@@ -49,24 +45,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container md-col-4 md-col-offset-4">
     <form class="form-signin" method="post">
-        <!--<label for="inputEmail" class="sr-only">Email address</label>-->
-        <!--<input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
-        <!--<label for="inputPassword" class="sr-only">Password</label>-->
-        <!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
         {% csrf_token %}
-        {% for field in form %}
-            <label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>
-            {{ field }}
-        {% endfor %}
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        {{ form }}
+{#        <h2 class="form-signin-heading">Please sign up</h2>#}
+{#        <label for="username" class="sr-only">User Name</label>#}
+{#        <input type="text" id="username" class="form-control" placeholder="User Name" required autofocus>#}
+{#        <label for="password" class="sr-only">Password</label>#}
+{#        <input type="password" id="password" class="form-control" placeholder="Password" required>#}
+{#                <label for="repeatPassword" class="sr-only">Repeat Your Password</label>#}
+{#        <input type="password" id="repeatPassword" class="form-control" placeholder="Repeat your Password" required>#}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        {{ err }}
     </form>
 </div>
-{% endblock %}}
+{% endblock %}
