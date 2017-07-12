@@ -2,8 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Students(models.Model):
-
-    id = models.CharField(primary_key=True, max_length=18)
+    id = models.CharField(max_length=18)
     name = models.CharField(max_length=20)
     age = models.IntegerField()
     date_of_birth = models.DateField()
@@ -17,11 +16,10 @@ class Students(models.Model):
     first_teacher = models.CharField(max_length=20)
     second_teacher = models.CharField(max_length=20)
     third_teacher = models.CharField(max_length=20)
-
+    usr_name = models.CharField(primary_key=True, max_length=15)
+    usr_pwd = models.CharField(max_length=15)
 class Selection(models.Model):
     student = models.ManyToManyField(Students,related_name="student")
     first_teacher = models.ManyToManyField('teacher.Teachers', related_name="teacher1")
     second_teacher = models.ManyToManyField('teacher.Teachers', related_name="teacher2")
     third_teacher = models.ManyToManyField('teacher.Teachers', related_name="teacher3")
-
-
