@@ -6,10 +6,10 @@ class TeacherHandle:
     # check the pwd of a teacher
     def can_login(self, name, pwd):
         try:
-            result = Teachers.objects.filter(name=pwd)
+            result = Teachers.objects.filter(name=name)
             if not result:
                 return False
             else:
-                return name == result[0].usr_pwd
+                return name == result[0]['phone_number']
         except Teachers.DoesNotExist:
             return False
