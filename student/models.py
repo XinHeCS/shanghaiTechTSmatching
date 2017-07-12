@@ -12,7 +12,7 @@ class Students(models.Model):
     gpa = models.FloatField()
     ranking = models.FloatField()
     comment = models.TextField()
-    attachment = models.FileField()
+    attachment = models.FileField(upload_to='attachment/%Y/%m/%d/')
     first_teacher = models.CharField(max_length=20)
     second_teacher = models.CharField(max_length=20)
     third_teacher = models.CharField(max_length=20)
