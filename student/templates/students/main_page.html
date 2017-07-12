@@ -1,0 +1,33 @@
+{% extends 'students/base.html' %}
+{% block content %}
+<div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Welcome {{ name }}!</h1>
+        <p>请选择下一步的操作</p>
+
+      </div>
+    </div>
+<div class="row col-md-10 col-md-offset-1">
+        <div class="col-md-4">
+          <h2>当前状态</h2><br>
+            <p>第一志愿：{{ first_teacher }}</p>
+            <p>第二志愿：{{ first_teacher }}</p>
+            <p>第三志愿：{{ first_teacher }}</p>
+
+        </div>
+        <div class="col-md-4">
+          <h2>志愿选择</h2><br>
+          <p>选择您的导师</p><br>
+          <p><a class="btn btn-primary" href="#" role="button">选择导师</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>信息修改</h2>
+            <div>
+                <p>请务必在第一次登录时进行信息的修改</p>
+          <p>修改您的个人信息</p><br>
+            </div>
+          <p><a class="btn btn-primary" href="#" role="button">修改信息</a></p>
+        </div>
+
+      </div>
+{% endblock %}
