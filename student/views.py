@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .model_tools.stu_db import StudentValidator
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .forms import RegisterForm, LoginForm
+from .forms import RegisterForm, LoginForm, EditForm
 
 from django.http import HttpResponse
 
@@ -49,6 +49,9 @@ def stu_register(request):
 def main_page(request):
     return render(request, 'students/main_page.html')
 
+def stu_edit(request):
+    form = EditForm()
+    return render(request, 'students/stu_edit.html', {'form':form})
 
 
 

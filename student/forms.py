@@ -42,11 +42,18 @@ class EditForm(forms.Form):
                                  'placeholder': '输入身份证号'
                              })
                              )
-    stu_sex = forms.BooleanField(label='性别', required=True)
+    stu_sex = forms.ChoiceField(label='性别', required=True, widget=forms.RadioSelect, choices=(('1', '男',), ('0', '女',)))
     stu_birth = forms.DateField(label='出生日期:', widget=forms.DateInput(attrs={
         'class': 'form-control',
         'placeholder': '年-月-日'
     }))
+    stu_email = forms.EmailField(label='电子邮箱：', required=True, widget=forms.EmailInput(attrs={'class':'form-control','placeholder':'邮箱'}))
+    stu_phone_number = forms.CharField(label='手机号：',max_length=25, required=True,widget=forms.TextInput(attrs={'class':'form-control','placeholder':'手机号码'}))
+    stu_university = forms.CharField(label='本科学校：',max_length=25, required=True,widget=forms.TextInput(attrs={'class':'form-control','placeholder':'本科学校名称'}))
+    stu_gpa = forms.FloatField(label='GPA/学分绩：', required=True, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'百分制学分绩，如没有，使用4分制GPA'}))
+    stu_ranking = forms.CharField(label='专业排名（百分比）：', required=True, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'专业排名百分比'}))
+
+    stu_attachment = forms.FileField(label='附件（简历等其他支撑材料,可选）', )
+    stu_comment = forms.CharField(label='备注（可选）',widget=forms.TextInput(attrs={'class':'form-control','placeholder':'如有其他信息请备注'}))
 
 
-c
