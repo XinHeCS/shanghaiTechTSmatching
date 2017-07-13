@@ -53,7 +53,8 @@ class TeacherInformationSpider:
             i = i +1
             print(each_teacher)
 
-    def save
+    def save_data(self):
+        pass
 
 
 spider = TeacherInformationSpider()
