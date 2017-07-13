@@ -18,12 +18,17 @@ def login(request):
             # check the login info
             # if failed, jump to the register page
             if stu_val.can_login(user_name, user_pwd):
-                return HttpResponse('Welcome to ShanghaiTech')
+                return render(request, 'teacher/main_page.html', {
+                    'user': user_name
+                })
             else:
-                return HttpResponse('Go back and fuck yourself!')
+                return render(request, 'teacher/login.html', {
+                    'form': form,
+                    'success_login': False
+                })
     else:
         form = LoginForm()
-
-    return render(request, 'teacher/login.html', {
-        'form': form
-    })
+        return render(request, 'teacher/login.html', {
+            'form': form,
+            'success_login': True
+        })

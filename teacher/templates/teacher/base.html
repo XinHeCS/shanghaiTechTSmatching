@@ -9,6 +9,20 @@
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
 
+    <style>
+        .nav-pills > li.active > a,
+        .nav-pills > li.active > a:hover,
+        .nav-pills > li.active > a:focus{
+            background-color: green;
+            color: white;
+        }
+
+        .nav-pills > li > a {
+            color: limegreen;
+        }
+
+    </style>
+
     {% block style %}
     {% endblock %}
 
