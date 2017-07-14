@@ -1,13 +1,16 @@
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,  login, logout
-from .forms import RegisterForm, LoginForm, EditForm
-from .models import Students
 from django.http import HttpResponse
-from django.views.generic.edit import UpdateView
-from fetch_teacher.fetch_teacher_infomation import TeacherInformationSpider
+
+from .model.fetch_teacher_infomation import TeacherInformationSpider
+
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from .model.fetch_teacher_infomation import TeacherInformationSpider
+from .model.forms import RegisterForm, LoginForm, EditForm
+from .model.models import Students
+
 
 # Create your views here.
 def stu_login(request):
@@ -32,9 +35,6 @@ def stu_login(request):
 
     form = LoginForm()
     return render(request, 'students/stu_login.html', {'form': form})
-
-
-
 
 def stu_register(request):
     if request.method == 'POST':
@@ -89,4 +89,7 @@ def select_teacher(requests):
     t_info = t_spider.spider()
 
     return render(requests, 'students/teacher_selection.html', {'info':t_info})
+<<<<<<< HEAD:student/views.py
 
+=======
+>>>>>>> upstream/dev:TSmatching/stu_view.py

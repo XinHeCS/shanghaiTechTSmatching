@@ -1,4 +1,4 @@
-from ..models import Teachers
+from .models import Students, Teachers
 
 # This class is used for checking the teacher users
 # update the data of teacher in the database
