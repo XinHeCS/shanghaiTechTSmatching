@@ -9,5 +9,5 @@ class LoginForm(forms.Form):
                                 }))
     user_pwd = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Enter your name'
+        'placeholder': 'Enter your password'
     }))

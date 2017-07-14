@@ -1,4 +1,27 @@
 {% extends 'teacher/base.html' %}
+{% load staticfiles %}
+
+{% block lib %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+{% endblock %}
+
+{% block style %}
+    <style>
+        .nav-pills > li.active > a,
+        .nav-pills > li.active > a:hover,
+        .nav-pills > li.active > a:focus{
+            background-color: green;
+            color: white;
+        }
+
+        .nav-pills > li > a {
+            color: limegreen;
+        }
+
+    </style>
+{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -9,7 +32,12 @@
                   <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
               </li>
               <li role="presentation">
-                  <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
+                  <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                      Profile
+                      {% if stu_info|length > 0 %}
+                      <span class="badge">{{ stu_info|length }}</span>
+                      {% endif %}
+                  </a>
               </li>
               <li role="presentation">
                   <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a>
@@ -22,27 +50,8 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-        {% include './home.html' %}
-    <div role="tabpanel" class="tab-pane fade" id="profile">
-        <div class="row">
-        <div class="col-lg-4">
-        <h2>Safari bug warning!</h2>
-        <p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-        <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        </div>
-    </div>
+        {% include "./home.html" %}
+        {% include "./profile.html" with students=stu_info %}
     <div role="tabpanel" class="tab-pane fade" id="messages">...</div>
     <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
     </div>

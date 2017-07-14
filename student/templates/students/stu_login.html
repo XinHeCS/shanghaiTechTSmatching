@@ -58,8 +58,13 @@
         <!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
         {% csrf_token %}
         {% for field in form %}
-            <label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>
-            {{ field }}
+            {{ field.name }}
+
+{#                <label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>#}
+
+                <label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>
+            <div class="list--group-item">{{ field }}</div>
+
         {% endfor %}
 
         <div class="checkbox">

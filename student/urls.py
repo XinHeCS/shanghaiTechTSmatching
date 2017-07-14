@@ -2,5 +2,9 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.stu_register,name="main")
+    url(r'^edit', views.stu_edit),
+    url(r'^main', views.main_page),
+    url(r'^login',views.stu_login),
+    url(r'^register',views.stu_register),
+
 ]
