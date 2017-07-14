@@ -2,9 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome to ShanghaiTech</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    {% block meta %}
+        <meta charset="UTF-8">
+    {% endblock %}
+
+    {% block title %}
+        <title>Base Title</title>
+    {% endblock %}
 
     {% block lib %}
     {% endblock %}

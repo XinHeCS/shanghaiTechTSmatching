@@ -1,6 +1,15 @@
 {% extends 'teacher/base.html' %}
 {% load staticfiles %}
 
+{% block meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+{% endblock %}
+
+{% block title %}
+    <title>Welcome to ShanghaiTech</title>
+{% endblock %}
+
 {% block lib %}
     <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
@@ -32,15 +41,15 @@
                   <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
               </li>
               <li role="presentation">
-                  <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-                      Profile
+                  <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                      Messages
                       {% if stu_info|length > 0 %}
                       <span class="badge">{{ stu_info|length }}</span>
                       {% endif %}
                   </a>
               </li>
               <li role="presentation">
-                  <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a>
+                  <a href="#student" aria-controls="student" role="tab" data-toggle="tab">Student</a>
               </li>
               <li role="presentation">
                   <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
@@ -51,8 +60,8 @@
     <!-- Tab panes -->
     <div class="tab-content">
         {% include "./home.html" %}
-        {% include "./profile.html" with students=stu_info %}
-    <div role="tabpanel" class="tab-pane fade" id="messages">...</div>
+        {% include "./messages.html" with students=stu_info %}
+    <div role="tabpanel" class="tab-pane fade" id="student">...</div>
     <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
     </div>
 </div>
