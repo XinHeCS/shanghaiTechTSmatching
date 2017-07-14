@@ -2,54 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TSmatching/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TSmatching/migrations/0001_initial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TSmatching/model/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TSmatching/stu_urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TSmatching/tea_urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/migrations/0002_students_email.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/migrations/0003_auto_20170714_1109.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/model_tools/stu_db.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/forms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/model_tools/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/teacher/urls.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fetch_teacher/fetch_teacher_infomation.py" afterPath="$PROJECT_DIR$/TSmatching/model/fetch_teacher_infomation.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/__init__.py" afterPath="$PROJECT_DIR$/TSmatching/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/admin.py" afterPath="$PROJECT_DIR$/TSmatching/admin.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/forms.py" afterPath="$PROJECT_DIR$/TSmatching/model/forms.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/migrations/__init__.py" afterPath="$PROJECT_DIR$/TSmatching/migrations/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/model_tools/__init__.py" afterPath="$PROJECT_DIR$/TSmatching/model/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/templates/students/base.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/base.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/templates/students/main_page.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/main_page.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/templates/students/stu_edit.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/templates/students/stu_login.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/templates/students/stu_register.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_register.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/student/tests.py" afterPath="$PROJECT_DIR$/TSmatching/tests.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/teacher/model_tools/db_teacher.py" afterPath="$PROJECT_DIR$/TSmatching/model/utility.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/teacher/templates/teacher/base.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/base.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/teacher/templates/teacher/home.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/home.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/teacher/templates/teacher/login.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/teacher/templates/teacher/main_page.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/main_page.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/teacher/templates/teacher/messages.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/messages.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/teacher/views.py" afterPath="$PROJECT_DIR$/TSmatching/tea_views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/stu_view.py" afterPath="$PROJECT_DIR$/TSmatching/stu_view.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" afterPath="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shanghaiTechTSmatching/urls.py" afterPath="$PROJECT_DIR$/shanghaiTechTSmatching/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student/templates/students/teacher_selection.html" afterPath="$PROJECT_DIR$/student/templates/students/teacher_selection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student/urls.py" afterPath="$PROJECT_DIR$/student/urls.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -153,9 +106,11 @@
       <file leaf-file-name="stu_view.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
-              <folding />
+            <state relative-caret-position="330">
+              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -270,24 +225,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TSmatching" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shanghaiTechTSmatching" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shanghaiTechTSmatching" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TSmatching" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1107,9 +1044,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

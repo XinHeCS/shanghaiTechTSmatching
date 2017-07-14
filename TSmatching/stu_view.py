@@ -89,7 +89,4 @@ def select_teacher(requests):
     t_info = t_spider.spider()
 
     return render(requests, 'students/teacher_selection.html', {'info':t_info})
-<<<<<<< HEAD:student/views.py
 
-=======
->>>>>>> upstream/dev:TSmatching/stu_view.py
