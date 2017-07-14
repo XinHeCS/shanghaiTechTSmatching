@@ -1,7 +1,7 @@
 import requests
 from lxml import html
 
-class TeacherInformationSpider:
+class TeacherInformationSpider():
     def __init__(self):
         self.teacher_info = [];
 
@@ -14,7 +14,6 @@ class TeacherInformationSpider:
         for i in range(2, 37):
             teacher_info_single = {}
             base_xpath = '//*[@id="lim"]/div/div[1]/div[2]/div[2]/div[' + str(i) +']'
-            print(base_xpath)
             teacher_info_single['name'] =  tree.xpath(base_xpath+'/div[1]/a/text()')
             teacher_info_single['tel'] = tree.xpath(base_xpath+'/div[2]/span/text()[2]')
             if i == 2 or i == 33:
@@ -42,10 +41,12 @@ class TeacherInformationSpider:
             else:
                 teacher_info_single['area'] = ''.join(tree.xpath(base_xpath+'/div[2]/span/ul/li[1]/text()[1]')+tree.xpath(base_xpath
                 +'/div[2]/span/ul/li[2]/text()[1]')+tree.xpath(base_xpath+'/div[2]/span/ul/li[3]/text()[1]')+tree.xpath(
-                base_xpath+'/div[2]/span/ul/li[4]/text()'))
+                base_xpath+'/div[2]/span/ul/li[4]/text()')).replace("\t","").replace("\r","")
+                print(teacher_info_single['area'])
 
 
             self.teacher_info.append(teacher_info_single)
+        return self.teacher_info
     def print_test(self):
         i = 2
         for each_teacher in self.teacher_info:
