@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -17,7 +18,7 @@ def stu_login(request):
             user_name = form.cleaned_data['user_name']
             user_pwd = form.cleaned_data['user_pwd']
             print(user_name+user_pwd)
-            user = authenticate(username='hexin', password='wohenshuai')
+            user = authenticate(username=user_name, password=user_pwd)
             print(user)
                 # check the login info
                 # if failed, jump to the register page
@@ -28,9 +29,9 @@ def stu_login(request):
                 return render(request, 'students/stu_login.html',{'form': form})
         else:
             return HttpResponse('Go back and fuck yourself!')
-    else:
-        form = LoginForm()
-        return render(request, 'students/stu_login.html', {'form': form})
+
+    form = LoginForm()
+    return render(request, 'students/stu_login.html', {'form': form})
 
 
 
@@ -43,35 +44,46 @@ def stu_register(request):
             password = form.cleaned_data['user_pwd']
             email = form.cleaned_data['user_email']
             print(user_name+password)
-            user = User.objects.create_user(user_name,email,password)
-            return render(request, 'students/stu_login.html')
+            user = User.objects.create_user(user_name,"",password)
+            stu = Students(user_name=user_name,email=email)
+            stu.save()
+            return HttpResponseRedirect('./login')
         else:
             return render(request, 'students/stu_register.html', {'form' : form,'err' : '请检查用户名密码是否符合要求'})
     else:
         form = RegisterForm()
     return render(request, 'students/stu_register.html', {'form':form})
 def main_page(request):
-    print(request.user.major)
+    stu_profile = Students.objects.get(user_name=request.user.username)
+    stu_profile.save()
+    print(stu_profile.major)
+    print(stu_profile.email)
     return render(request, 'students/main_page.html',{'name':request.user.username})
 
+@login_required
 def stu_edit(request):
+    print(request.user.username)
+    form = EditForm()
     if(request.method == 'POST'):
         form = EditForm(request.POST)
+        print("haha")
         if form.is_valid():
-            request.user.resident_id = EditForm.cleaned_data['stu_id']
-            request.user.name = EditForm.cleaned_data['stu_name']
-            request.user.date_of_birth = EditForm.cleaned_data['stu_birth']
-            request.user.email = EditForm.cleaned_data['stu_email']
-            request.user.phone_number = EditForm.cleaned_data['stu_phone_number']
-            request.user.university = EditForm.cleaned_data['stu_university']
-            request.user.major = EditForm.cleaned_data['stu_major']
-            request.user.gpa = EditForm.cleaned_data['stu_gpa']
-            request.user.ranking = EditForm.cleaned_data['stu_ranking']
-            request.user.comment = EditForm.cleaned_data['stu_comment']
-            request.user.attachment = EditForm.cleaned_data['stu_attachment']
-    else:
-        form = EditForm()
-        return render(request, 'students/stu_edit.html', {'form': form})
+            stu = Students.objects.get(user_name=request.user.username)
+            print("haha")
+            form.encoding = 'utf-8'
+            stu.resident_id = form.cleaned_data['stu_id']
+            stu.name = form.cleaned_data['stu_name']
+            stu.date_of_birth = form.cleaned_data['stu_birth']
+            stu.email = form.cleaned_data['stu_email']
+            stu.phone_number = form.cleaned_data['stu_phone_number']
+            stu.university = form.cleaned_data['stu_university']
+            stu.major = form.cleaned_data['stu_major']
+            stu.gpa = form.cleaned_data['stu_gpa']
+            stu.ranking = form.cleaned_data['stu_ranking']
+            stu.comment = form.cleaned_data['stu_comment']
+            #stu.attachment = EditForm.cleaned_data['stu_attachment']
+            stu.save()
+            return render(request, 'students/stu_edit.html', {'form': form})
     return render(request, 'students/stu_edit.html', {'form':form})
 
 
