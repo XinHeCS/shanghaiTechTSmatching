@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/student/migrations/0002_students_resident_id.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
