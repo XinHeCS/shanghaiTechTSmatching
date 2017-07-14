@@ -7,7 +7,7 @@ from .forms import RegisterForm, LoginForm, EditForm
 from .models import Students
 from django.http import HttpResponse
 from django.views.generic.edit import UpdateView
-
+from fetch_teacher.fetch_teacher_infomation import TeacherInformationSpider
 
 # Create your views here.
 def stu_login(request):
@@ -62,14 +62,11 @@ def main_page(request):
 
 @login_required
 def stu_edit(request):
-    print(request.user.username)
     form = EditForm()
     if(request.method == 'POST'):
         form = EditForm(request.POST)
-        print("haha")
         if form.is_valid():
             stu = Students.objects.get(user_name=request.user.username)
-            print("haha")
             form.encoding = 'utf-8'
             stu.resident_id = form.cleaned_data['stu_id']
             stu.name = form.cleaned_data['stu_name']
@@ -86,5 +83,10 @@ def stu_edit(request):
             return render(request, 'students/stu_edit.html', {'form': form})
     return render(request, 'students/stu_edit.html', {'form':form})
 
+@login_required
+def select_teacher(requests):
+    t_spider = TeacherInformationSpider()
+    t_info = t_spider.spider()
 
+    return render(requests, 'students/teacher_selection.html', {'info':t_info})
 
