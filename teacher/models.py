@@ -11,3 +11,6 @@ class Teachers(models.Model):
     research_area = models.CharField(max_length=30)
     recruit_number = models.IntegerField()
     url = models.URLField()
+
+    def __str__(self):
+        return self.name

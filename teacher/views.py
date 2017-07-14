@@ -11,19 +11,26 @@ def login(request):
 
         # check the teacher's ID
         if form.is_valid():
-            stu_val = TeacherHandle()
             user_name = form.cleaned_data['user_name']
             user_pwd = form.cleaned_data['user_pwd']
+            tea_hdl = TeacherHandle(user_name, user_pwd)
 
             # check the login info
             # if failed, jump to the register page
-            if stu_val.can_login(user_name, user_pwd):
-                return HttpResponse('Welcome to ShanghaiTech')
+            if tea_hdl.can_login():
+                return render(request, 'teacher/main_page.html', {
+                    'user': user_name,
+                    'success_login': True,
+                    'stu_info': tea_hdl.get_students()
+                })
             else:
-                return HttpResponse('Go back and fuck yourself!')
+                return render(request, 'teacher/login.html', {
+                    'form': form,
+                    'success_login': False
+                })
     else:
         form = LoginForm()
-
-    return render(request, 'teacher/login.html', {
-        'form': form
-    })
+        return render(request, 'teacher/login.html', {
+            'form': form,
+            'success_login': True
+        })
