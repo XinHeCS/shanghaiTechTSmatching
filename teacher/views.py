@@ -11,15 +11,17 @@ def login(request):
 
         # check the teacher's ID
         if form.is_valid():
-            stu_val = TeacherHandle()
             user_name = form.cleaned_data['user_name']
             user_pwd = form.cleaned_data['user_pwd']
+            tea_hdl = TeacherHandle(user_name, user_pwd)
 
             # check the login info
             # if failed, jump to the register page
-            if stu_val.can_login(user_name, user_pwd):
+            if tea_hdl.can_login():
                 return render(request, 'teacher/main_page.html', {
-                    'user': user_name
+                    'user': user_name,
+                    'success_login': True,
+                    'stu_info': tea_hdl.get_students()
                 })
             else:
                 return render(request, 'teacher/login.html', {

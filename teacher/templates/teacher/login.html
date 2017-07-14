@@ -57,13 +57,9 @@
 <div class="container">
     <h2 class="form-signin-heading">Please sign in</h2>
     <form class="form-signin" method="post">
-        <!--<label for="inputEmail" class="sr-only">Email address</label>-->
-        <!--<input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
-        <!--<label fora="inputPassword" class="sr-only">Password</label>-->
-        <!--<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
         {% csrf_token %}
         {% for field in form %}
-            <label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>
+            <!--<label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>-->
             {{ field }}
         {% endfor %}
         <div class="checkbox">
@@ -73,8 +69,8 @@
         </div>
         <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
         {% if not success_login %}
-        <div class="alert alert-danger alert-box alert-dismissible" role="alert">
-            <button type="button" class="close" dta-dismiss="alert" aria-label="Close">
+        <div class="alert alert-danger alert-dismissible alert-box" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;
                 </span>
             </button>
