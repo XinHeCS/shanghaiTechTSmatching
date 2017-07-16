@@ -27,6 +27,7 @@ wheels/
 *.xml
 .DS_Store
 s
+*.jpg
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

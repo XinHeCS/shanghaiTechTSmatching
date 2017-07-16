@@ -33,8 +33,8 @@ class Students(models.Model):
     comment = models.TextField(default="")
     # True if this student has been accepted
     accepted = models.BooleanField(default=False)
-    attachment = models.FileField(upload_to = './attachment')
-    # description = models.TextField(default="", max_length=600)
+    attachment = models.FileField(upload_to = './attachment', null=True)
+    photo = models.ImageField(upload_to='./img', null=True)
 
     def __str__(self):
         return self.user_name
