@@ -14,7 +14,7 @@ TSmatching/migrations/
 *.manifest
 *.spec
 
-# Installer logs
+#gs Installer lo
 pip-log.txt
 pip-delete-this-directory.txt
 
