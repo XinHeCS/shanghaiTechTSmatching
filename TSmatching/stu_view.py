@@ -53,10 +53,8 @@ def stu_register(request):
         form = RegisterForm()
     return render(request, 'students/stu_register.html', {'form':form})
 def main_page(request):
-    Students.objects.get_or_create(user_name=request.user.username)
+    #Students.objects.get_or_create(user_name=request.user.username)
     stu_profile = Students.objects.get(user_name=request.user.username)
-    print(stu_profile.major)
-    print(stu_profile.email)
     return render(request, 'students/main_page.html',{'name':request.user.username, 'stu':stu_profile})
 
 @login_required
@@ -64,10 +62,11 @@ def stu_edit(request):
     form = EditForm()
     if request.method == 'POST':
         form = EditForm(request.POST, request.FILES)
+        form.encoding = 'utf-8'
         print(form.is_valid())
         if form.is_valid():
             stu = Students.objects.get(user_name=request.user.username)
-            form.encoding = 'utf-8'
+
             stu.resident_id = form.cleaned_data['stu_id']
             stu.name = form.cleaned_data['stu_name']
             stu.date_of_birth = form.cleaned_data['stu_birth']
@@ -80,7 +79,7 @@ def stu_edit(request):
             stu.comment = form.cleaned_data['stu_comment']
             stu.attachment = form.cleaned_data['stu_attachment']
             stu.sex = form.cleaned_data['stu_sex']
-
+            stu.photo = form.cleaned_data['stu_pic']
             stu.save()
             return render(request, 'students/stu_edit.html', {'form': form})
     return render(request, 'students/stu_edit.html', {'form':form})

@@ -73,3 +73,4 @@ class EditForm(forms.Form):
                                       'placeholder':'如有其他信息请备注'
                                   }))
     stu_attachment = forms.FileField()
+    stu_pic = forms.FileField()
