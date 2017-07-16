@@ -3,7 +3,7 @@ from lxml import html
 
 class TeacherInformationSpider():
     def __init__(self):
-        self.teacher_info = [];
+        self.teacher_info = []
 
 
     def spider(self):
