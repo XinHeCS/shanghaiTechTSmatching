@@ -23,12 +23,12 @@ class TeacherHandle:
         stu_info_obj = Students.objects.get(user_name=stu.student.user_name)
 
         return {
-            'Name': stu_info_obj.name,
-            'School': stu_info_obj.university,
+            'name': stu_info_obj.name,
+            'school': stu_info_obj.university,
             'GPA': stu_info_obj.gpa,
-            'Tel': stu_info_obj.phone_number,
-            'Email': stu_info_obj.email,
-            'Description': stu_info_obj.comment
+            'phone_number': stu_info_obj.phone_number,
+            'we_chat': stu_info_obj.email,
+            'description': stu_info_obj.comment
         }
 
     # get the students that prefer this teacher
@@ -58,70 +58,3 @@ class TeacherHandle:
                     ret.append(stu_info)
 
         return ret
-
-        # return [
-        #     {
-        #         'name': 'Test1',
-        #         'school': 'Test University',
-        #         'GPA': 3.67,
-        #         'tel': '13233333333',
-        #         'we_chat': 'test123',
-        #         'photo': '/resource/photo/test.jpg',
-        #         'description': '''
-        #         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-        #         richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-        #         Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-        #         sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-        #         Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-        #         proident.
-        #         '''
-        #     },
-        #     {
-        #         'name': 'Test2',
-        #         'school': 'Test University',
-        #         'GPA': 3.67,
-        #         'tel': '13233333333',
-        #         'we_chat': 'test123',
-        #         'photo': '/resource/photo/test.jpg',
-        #         'description': '''
-        #         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-        #         richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-        #         Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-        #         sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-        #         Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-        #         proident.
-        #         '''
-        #     },
-        #     {
-        #         'name': 'Test3',
-        #         'school': 'Test University',
-        #         'GPA': 3.67,
-        #         'tel': '13233333333',
-        #         'we_chat': 'test123',
-        #         'photo': '/resource/photo/test.jpg',
-        #         'description': '''
-        #         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-        #         richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-        #         Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-        #         sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-        #         Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-        #         proident.
-        #         '''
-        #     },
-        #     {
-        #         'name': 'Test4',
-        #         'school': 'Test University',
-        #         'GPA': 3.67,
-        #         'tel': '13233333333',
-        #         'we_chat': 'test123',
-        #         'photo': '/resource/photo/test.jpg',
-        #         'description': '''
-        #         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-        #         richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-        #         Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-        #         sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-        #         Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-        #         proident.
-        #         '''
-        #     }
-        # ]

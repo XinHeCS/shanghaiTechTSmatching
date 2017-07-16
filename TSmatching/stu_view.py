@@ -52,6 +52,8 @@ def stu_register(request):
     else:
         form = RegisterForm()
     return render(request, 'students/stu_register.html', {'form':form})
+
+
 def main_page(request):
     Students.objects.get_or_create(user_name=request.user.username)
     stu_profile = Students.objects.get(user_name=request.user.username)
