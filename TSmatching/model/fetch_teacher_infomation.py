@@ -42,25 +42,18 @@ class TeacherInformationSpider():
                 teacher_info_single['area'] = ''.join(tree.xpath(base_xpath+'/div[2]/span/ul/li[1]/text()[1]')+tree.xpath(base_xpath
                 +'/div[2]/span/ul/li[2]/text()[1]')+tree.xpath(base_xpath+'/div[2]/span/ul/li[3]/text()[1]')+tree.xpath(
                 base_xpath+'/div[2]/span/ul/li[4]/text()')).replace("\t","").replace("\r","")
-                print(teacher_info_single['area'])
-
-
             self.teacher_info.append(teacher_info_single)
-        return self.teacher_info
-    def print_test(self):
-        i = 2
+    def process_data(self):
         for each_teacher in self.teacher_info:
-            print(i)
-            i = i +1
-            print(each_teacher)
-
-    def save_data(self):
-        pass
+            for k, v in each_teacher.items():
+                v = "".join(v)
+                v.replace("['","").replace("']","")
 
 
-spider = TeacherInformationSpider()
-spider.spider()
-spider.print_test()
+
+    def return_data(self):
+        return self.teacher_info
+
 
 
 
