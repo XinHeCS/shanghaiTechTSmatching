@@ -73,6 +73,15 @@
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            {% if can_not_login %}
+        <div class="alert alert-danger alert-dismissible alert-box" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;
+                </span>
+            </button>
+            <strong>Sorry!</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wrong user or password
+        </div>
+        {% endif %}
     </form>
 </div>
 {% endblock %}}
