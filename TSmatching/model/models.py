@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+
 class Teachers(models.Model):
     id = models.CharField(primary_key=True, max_length=18)
     title = models.CharField(max_length=10)
@@ -20,6 +21,7 @@ class Students(models.Model):
     user_name = models.CharField(max_length=20,default="",primary_key=True)
     resident_id = models.CharField(max_length=20, default="")
     name = models.CharField(max_length=20, default="")
+    sex = models.BooleanField(default=True)
     date_of_birth = models.DateField(default="1970-01-01")
     phone_number = models.CharField(max_length=25, default="")
     university = models.CharField(max_length=25, default="")
@@ -28,6 +30,10 @@ class Students(models.Model):
     email = models.EmailField(default="")
     ranking = models.CharField(default="", max_length=10)
     comment = models.TextField(default="")
+    attachment = models.FileField(upload_to = './attachment')
 
     def __str__(self):
         return self.user_name
+
+def file_name(name):
+    pass

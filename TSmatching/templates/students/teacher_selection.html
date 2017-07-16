@@ -2,7 +2,7 @@
 {% block content %}
 <div class="row col-md-10 col-md-offset-1" style="text-align: center;margin-left: auto">
         <div class="col-md-4">
-          <h2>当前状态</h2>
+          <h2>我的信息</h2>
             <p>第一志愿：{{ first_teacher }}</p>
             <p>第二志愿：{{ first_teacher }}</p>
             <p>第三志愿：{{ first_teacher }}</p>
@@ -54,7 +54,7 @@
             <dl>
                 <dt><h5 class="list-group-item-heading">{{ each_t.name}}</h5>
                     <div class="list-group-item-text">
-                        电话号码：{{ each_t.tel }}<br>
+                        电话号码:{{ each_t.tel }}<br>
                         电子邮箱:{{ each_t.email }}<br>
                         办公地址:{{ each_t.address }}<br>
                         研究领域:{{ each_t.area }}<br>

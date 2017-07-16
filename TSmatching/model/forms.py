@@ -72,3 +72,4 @@ class EditForm(forms.Form):
                                       'class':'form-control',
                                       'placeholder':'如有其他信息请备注'
                                   }))
+    stu_attachment = forms.FileField()
