@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/stu_view.py" afterPath="$PROJECT_DIR$/TSmatching/stu_view.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,11 +70,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stu_view.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stu_view.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="36" column="78" lean-forward="false" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
+            <state relative-caret-position="139">
+              <caret line="36" column="83" lean-forward="false" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="83" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -81,25 +82,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TSmatching/templates/teacher/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="73" column="27" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
-              <folding>
-                <element signature="e#2058#2064#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stu_login.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="stu_login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
               <folding>
-                <element signature="e#2513#2519#0#HTML" expanded="true" />
+                <element signature="e#2509#2515#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -221,11 +210,11 @@
         <option value="$PROJECT_DIR$/TSmatching/templates/teacher/main_page.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
-        <option value="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" />
         <option value="$PROJECT_DIR$/TSmatching/templates/students/main_page.html" />
         <option value="$PROJECT_DIR$/TSmatching/stu_urls.py" />
         <option value="$PROJECT_DIR$/TSmatching/stu_view.py" />
+        <option value="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" />
+        <option value="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
       </list>
     </option>
   </component>
@@ -1175,16 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="e#2513#2519#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/django/core/handlers/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1203,20 +1182,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TSmatching/templates/teacher/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="73" column="27" lean-forward="false" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
+        <state relative-caret-position="130">
+          <caret line="70" column="31" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="31" />
           <folding>
-            <element signature="e#2058#2064#0#HTML" expanded="true" />
+            <element signature="e#1953#1960#0#HTML" expanded="true" />
+            <element signature="e#2042#2048#0#HTML" expanded="true" />
+            <element signature="e#2048#2054#0#HTML" expanded="true" />
+            <element signature="e#2054#2060#0#HTML" expanded="true" />
+            <element signature="e#2060#2066#0#HTML" expanded="true" />
+            <element signature="e#2066#2072#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="36" column="78" lean-forward="false" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
+        <state relative-caret-position="139">
+          <caret line="36" column="83" lean-forward="false" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="83" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+          <folding>
+            <element signature="e#2509#2515#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
