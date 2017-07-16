@@ -22,6 +22,7 @@ class Students(models.Model):
     user_name = models.CharField(max_length=20,default="",primary_key=True)
     resident_id = models.CharField(max_length=20, default="")
     name = models.CharField(max_length=20, default="")
+    sex = models.BooleanField(default=True)
     date_of_birth = models.DateField(default="1970-01-01")
     phone_number = models.CharField(max_length=25, default="")
     university = models.CharField(max_length=25, default="")
@@ -32,7 +33,7 @@ class Students(models.Model):
     comment = models.TextField(default="")
     # True if this student has been accepted
     accepted = models.BooleanField(default=False)
-
+    attachment = models.FileField(upload_to = './attachment')
 
     def __str__(self):
         return self.user_name
@@ -59,4 +60,5 @@ class Selection(models.Model):
     def __str__(self):
         self.student.__str__()
 
-
+def file_name(name):
+    pass

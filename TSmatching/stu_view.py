@@ -43,7 +43,6 @@ def stu_register(request):
             user_name = form.cleaned_data['user_name']
             password = form.cleaned_data['user_pwd']
             email = form.cleaned_data['user_email']
-            print(user_name+password)
             user = User.objects.create_user(user_name,"",password)
             stu = Students(user_name=user_name,email=email)
             stu.save()
@@ -54,17 +53,18 @@ def stu_register(request):
         form = RegisterForm()
     return render(request, 'students/stu_register.html', {'form':form})
 def main_page(request):
+    Students.objects.get_or_create(user_name=request.user.username)
     stu_profile = Students.objects.get(user_name=request.user.username)
-    stu_profile.save()
     print(stu_profile.major)
     print(stu_profile.email)
-    return render(request, 'students/main_page.html',{'name':request.user.username})
+    return render(request, 'students/main_page.html',{'name':request.user.username, 'stu':stu_profile})
 
 @login_required
 def stu_edit(request):
     form = EditForm()
     if request.method == 'POST':
-        form = EditForm(request.POST)
+        form = EditForm(request.POST, request.FILES)
+        print(form.is_valid())
         if form.is_valid():
             stu = Students.objects.get(user_name=request.user.username)
             form.encoding = 'utf-8'
@@ -78,7 +78,9 @@ def stu_edit(request):
             stu.gpa = form.cleaned_data['stu_gpa']
             stu.ranking = form.cleaned_data['stu_ranking']
             stu.comment = form.cleaned_data['stu_comment']
-            #stu.attachment = EditForm.cleaned_data['stu_attachment']
+            stu.attachment = form.cleaned_data['stu_attachment']
+            stu.sex = form.cleaned_data['stu_sex']
+
             stu.save()
             return render(request, 'students/stu_edit.html', {'form': form})
     return render(request, 'students/stu_edit.html', {'form':form})
@@ -89,11 +91,12 @@ def select_teacher(request):
     t_spider.spider()
     t_spider.process_data()
     t_info = t_spider.return_data()
+    stu = Students.objects.get(user_name=request.user.username)
     if request.method == "POST":
         selection1 = request.POST.get('t1')
         selection2 = request.POST.get('t2')
         selection3 = request.POST.get('t3')
-        print(selection1)
+
 
         return render(request, 'students/teacher_selection.html', {'info': t_info})
     return render(request, 'students/teacher_selection.html', {'info':t_info})
