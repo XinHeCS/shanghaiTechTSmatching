@@ -9,6 +9,7 @@ def login(request):
     global tea_hdl
 
     if request.method == 'POST':
+        print(request.POST['user_pwd'])
         form = LoginForm(request.POST)
 
         # check the teacher's ID
