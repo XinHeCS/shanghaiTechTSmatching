@@ -1,7 +1,30 @@
 {% extends 'students/base.html' %}
 {% load staticfiles %}
 {% block content %}
+     <nav class="navbar-inverse navbar-fixed-top">
+
+      <div class="container">
+        <div class="navbar-header" >
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ShanghaiTech</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
+          <div class="navbar-right">
+                <button type="button" onclick="window.location.href='./logout'" class="btn btn-default navbar-btn navbar-right">Log out</button>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
 <div class="jumbotron">
+<div style="text-align: right;margin-left: auto">
+
+</div>
       <div class="container">
         <h1 class="display-3">Welcome {{ name }}!</h1>
         <p>请选择下一步的操作</p>
@@ -11,12 +34,12 @@
 <div class="col-md-10 col-md-offset-1 ">
         <div class="col-md-7">
           <h2>注册信息</h2><br>
-        <div class="col-md-5">
-            <img src="{% static stu.photo %}" width="170" height="220" alt="Photo Not Found" class="img-circle">
+        <div class="col-md-4">
+            <img src="{% static stu.photo %}" width="170" height="220" alt="请在信息修改中补充您的个人照" class="img-circle">
         </div>
-           <div class="col-md-7">
-           <h4>姓名：<small>{{ stu.name }}</small></h4>
-               <h4>性别：
+           <div class="col-md-7 col-md-offset-1">
+           <h5>姓名：<small>{{ stu.name }}</small></h5>
+               <h5>性别：
            <small>
                 {% if stu.sex == True %}
                     {{ "男" }}
@@ -24,20 +47,20 @@
                     {{ "女" }}
                 {% endif %}
             </small>
-               </h4>
-               <h4>身份证号码：<small>{{ stu.resident_id }}</small></h4>
+               </h5>
+               <h5>身份证号码：<small>{{ stu.resident_id }}</small></h5>
 
-               <h4>出生日期：<small>{{ stu.date_of_birth }}</small></h4>
+               <h5>出生日期：<small>{{ stu.date_of_birth }}</small></h5>
 
-            <h4>本科院系：<small>{{ stu.university }} {{ stu.major }}</small></h4>
+            <h5>本科院系：<small>{{ stu.university }} {{ stu.major }}</small></h5>
 
-            <h4>电话号码：<small>{{ stu.tel }}</small></h4>
+            <h5>电话号码：<small>{{ stu.phone_number }}</small></h5>
 
-            <h4>Email：<small>{{ stu.email }} </small></h4>
+            <h5>Email：<small>{{ stu.email }} </small></h5>
 
-            <h4>学分绩: <small>{{ stu.gpa }} </small></h4>
+            <h5>学分绩: <small>{{ stu.gpa }} </small></h5>
 
-            <h4>专业排名：<small>{{ stu.ranking }}</small></h4>
+            <h5>专业排名：<small>{{ stu.ranking }}</small></h5>
         </div>
 
         </div>

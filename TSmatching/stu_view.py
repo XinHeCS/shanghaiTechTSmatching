@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
@@ -14,13 +14,14 @@ from .model.models import Students
 
 # Create your views here.
 def stu_login(request):
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
             # Get user name and password
             user_name = form.cleaned_data['user_name']
             user_pwd = form.cleaned_data['user_pwd']
-            print(user_name+user_pwd)
+
             user = authenticate(username=user_name, password=user_pwd)
             print(user)
                 # check the login info
@@ -29,12 +30,11 @@ def stu_login(request):
                 login(request,user)
                 return HttpResponseRedirect('./main')
             else:
-                return render(request, 'students/stu_login.html',{'form': form})
+                return render(request, 'students/stu_login.html',{'form': form, 'can_not_login' : True})
         else:
-            return HttpResponse('Go back and fuck yourself!')
-
+            return render(request, 'students/stu_login.html', {'form': form, 'can_not_login': True})
     form = LoginForm()
-    return render(request, 'students/stu_login.html', {'form': form})
+    return render(request, 'students/stu_login.html', {'form': form, 'can_login': False})
 
 def stu_register(request):
     if request.method == 'POST':
@@ -53,7 +53,7 @@ def stu_register(request):
         form = RegisterForm()
     return render(request, 'students/stu_register.html', {'form':form})
 
-
+@login_required(redirect_field_name="stu_login")
 def main_page(request):
     #Students.objects.get_or_create(user_name=request.user.username)
     stu_profile = Students.objects.get(user_name=request.user.username)
@@ -102,4 +102,6 @@ def select_teacher(request):
         return render(request, 'students/teacher_selection.html', {'info': t_info})
     return render(request, 'students/teacher_selection.html', {'info':t_info})
 
-
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect('./login')
