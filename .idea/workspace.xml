@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" afterPath="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stu_login.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stu_login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -90,6 +89,26 @@
               <folding>
                 <element signature="e#2509#2515#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shanghaiTechTSmatching/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stu_register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -206,7 +225,6 @@
         <option value="$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html" />
         <option value="$PROJECT_DIR$/TSmatching/model/forms.py" />
         <option value="$PROJECT_DIR$/TSmatching/model/models.py" />
-        <option value="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" />
         <option value="$PROJECT_DIR$/TSmatching/templates/teacher/main_page.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -215,6 +233,7 @@
         <option value="$PROJECT_DIR$/TSmatching/stu_view.py" />
         <option value="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" />
         <option value="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
+        <option value="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" />
       </list>
     </option>
   </component>
@@ -724,7 +743,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="23" width="1440" height="813" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -734,7 +752,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -915,14 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -987,14 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shanghaiTechTSmatching/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="114" column="25" lean-forward="false" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1205,6 +1207,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1212,6 +1222,14 @@
           <folding>
             <element signature="e#2509#2515#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shanghaiTechTSmatching/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="122" column="21" lean-forward="false" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
