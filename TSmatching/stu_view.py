@@ -34,7 +34,7 @@ def stu_login(request):
         else:
             return render(request, 'students/stu_login.html', {'form': form, 'can_not_login': True})
     form = LoginForm()
-    return render(request, 'students/stu_login.html', {'form': form, 'can_login': False})
+    return render(request, 'students/stu_login.html', {'form': form, 'can_not_login': False})
 
 def stu_register(request):
     if request.method == 'POST':
