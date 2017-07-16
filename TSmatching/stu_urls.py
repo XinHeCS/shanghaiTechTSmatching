@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^main', stu_view.main_page, name='stu_main'),
     url(r'^login',stu_view.stu_login, name='stu_login'),
     url(r'^register',stu_view.stu_register, name='stu_register'),
-    url(r'^select',stu_view.select_teacher, name='stu_select')
+    url(r'^select',stu_view.select_teacher, name='stu_select'),
+    url(r'^logout',stu_view.log_out, name='logout')
 ]
