@@ -1,8 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import LoginForm
-from .model_tools.db_teacher import TeacherHandle
-
+from .model.forms import LoginForm
+from .model.utility import TeacherHandle
 
 # Create your views here.
 def login(request):
