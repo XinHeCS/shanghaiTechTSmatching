@@ -34,6 +34,7 @@ class Students(models.Model):
     # True if this student has been accepted
     accepted = models.BooleanField(default=False)
     attachment = models.FileField(upload_to = './attachment')
+    # description = models.TextField(default="", max_length=600)
 
     def __str__(self):
         return self.user_name
