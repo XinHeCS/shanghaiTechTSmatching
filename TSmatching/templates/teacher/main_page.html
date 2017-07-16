@@ -32,27 +32,87 @@
     </style>
 {% endblock %}
 
+{% block local_script %}
+    <script>
+    function load_tab() {
+        if (sessionStorage.length > 1)
+        {
+            var cur_tab = sessionStorage.getItem('cur_tab');
+            var pre_tab = sessionStorage.getItem('pre_tab');
+            document.getElementById(pre_tab).className =
+                document.getElementById(pre_tab).className.replace(/(?:^|\s)active(?!\s)/g, '');
+            active_tab_label(cur_tab);
+            active_tab(cur_tab);
+        }
+        else
+        {
+            sessionStorage.setItem('cur_tab', 'home-li');
+            active_tab_label('home-li');
+            active_tab('home-li');
+        }
+    }
+
+    function tab_change(next_tab) {
+        var pre_tab = sessionStorage.getItem('cur_tab');
+        sessionStorage.setItem('pre_tab', pre_tab);
+        sessionStorage.setItem('cur_tab', next_tab);
+    }
+
+    function active_tab_label(cur_tab) {
+            document.getElementById(cur_tab).className =
+                document.getElementById(cur_tab).className += ' active';
+    }
+
+    function close_active_tab(cur_tab) {
+        document.getElementById(cur_tab).className =
+            document.getElementById(cur_tab).className.replace(/(?:^|\s)active(?!\s)/g, '');
+        document.getElementById(cur_tab).className =
+            document.getElementById(cur_tab).className.replace(/(?:^|\s)in(?!\s)/g, '');
+    }
+
+    function active_tab(cur_tab) {
+        var tab = cur_tab.replace(/-li/g, '');
+        var pre_tab = sessionStorage.getItem('pre_tab');
+        if (pre_tab)
+        {
+            pre_tab = pre_tab.replace(/-li/g, '');
+            close_active_tab(pre_tab);
+        }
+        document.getElementById(tab).className =
+            document.getElementById(tab).className += ' active';
+        document.getElementById(tab).className =
+            document.getElementById(tab).className += ' in';
+    }
+
+    </script>
+{% endblock %}
+
 {% block content %}
+<body onload="load_tab()">
 <div class="container">
     <div class="masthead">
       <h3 class="text-muted">Hello, {{ user }}</h3>
           <ul class="nav nav-pills nav-justified">
-              <li role="presentation" class="active">
-                  <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+              <li role="presentation" id="home-li">
+                  <a href="#home" aria-controls="home" role="tab"
+                     data-toggle="tab" onclick="tab_change('home-li')">Home</a>
               </li>
-              <li role="presentation">
-                  <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+              <li role="presentation" id="messages-li">
+                  <a href="#messages" aria-controls="settings" role="tab"
+                     data-toggle="tab" onclick="tab_change('messages-li')">
                       Messages
                       {% if stu_info|length > 0 %}
                       <span class="badge">{{ stu_info|length }}</span>
                       {% endif %}
                   </a>
               </li>
-              <li role="presentation">
-                  <a href="#student" aria-controls="student" role="tab" data-toggle="tab">Student</a>
+              <li role="presentation" id="student-li">
+                  <a href="#student" aria-controls="student" role="tab"
+                     data-toggle="tab" onclick="tab_change('student-li')">Student</a>
               </li>
-              <li role="presentation">
-                  <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
+              <li role="presentation" id="settings-li">
+                  <a href="#settings" aria-controls="settings" role="tab"
+                     data-toggle="tab" onclick="tab_change('settings-li')">Settings</a>
               </li>
           </ul>
     </div>
@@ -65,4 +125,5 @@
     <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
     </div>
 </div>
+</body>
 {% endblock %}

@@ -2,5 +2,6 @@ from django.conf.urls import url
 from . import tea_views
 
 urlpatterns = [
-    url('^$', tea_views.login, name='tea_login_page')
+    url(r'^login/$', tea_views.login, name='tea_login_page'),
+    url(r'^messages/(accept)/(\w+)/$', tea_views.message_page, name='tea_mess_page')
 ]

@@ -2,28 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block meta %}
-        <meta charset="UTF-8">
-    {% endblock %}
 
-    {% block title %}
-        <title>Base Title</title>
-    {% endblock %}
+{% block meta %}
+    <meta charset="UTF-8">
+{% endblock %}
 
-    {% block lib %}
-    {% endblock %}
+{% block title %}
+    <title>Base Title</title>
+{% endblock %}
 
-    {% block style %}
-    {% endblock %}
+{% block lib %}
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block local_script %}
+{% endblock %}
+
 
 </head>
+{% block content %}
 <body>
 
-{% block content %}
 <div>
     This is the default content if it is not be replaced!
 </div>
-{% endblock %}
 
 </body>
+{% endblock %}
 </html>

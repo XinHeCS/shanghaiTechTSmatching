@@ -2,8 +2,12 @@ from django.shortcuts import render
 from .model.forms import LoginForm
 from .model.utility import TeacherHandle
 
+tea_hdl = None
+
 # Create your views here.
 def login(request):
+    global tea_hdl
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
 
@@ -18,7 +22,6 @@ def login(request):
             if tea_hdl.can_login():
                 return render(request, 'teacher/main_page.html', {
                     'user': user_name,
-                    'success_login': True,
                     'stu_info': tea_hdl.get_students()
                 })
             else:
@@ -32,3 +35,18 @@ def login(request):
             'form': form,
             'success_login': True
         })
+
+def message_page(request, action, stu):
+    global tea_hdl
+
+    if not tea_hdl:
+        form = LoginForm()
+        return render(request, 'teacher/login.html', {
+            'form': form,
+            'success_login': True
+        })
+
+    return render(request, 'teacher/main_page.html', {
+        'user': tea_hdl.__str__(),
+        'stu_info': tea_hdl.get_students()
+    })

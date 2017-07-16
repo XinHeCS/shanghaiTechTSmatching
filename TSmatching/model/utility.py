@@ -3,9 +3,12 @@ from .models import Students, Teachers, Selection
 # This class is used for checking the teacher users
 # update the data of teacher in the database
 class TeacherHandle:
-    def __init__(self, name, pwd):
+    def __init__(self, name, pwd=''):
         self.__name = name
         self.__password = pwd
+
+    def __str__(self):
+        return self.__name
 
     # check the pwd of a teacher
     def can_login(self):
