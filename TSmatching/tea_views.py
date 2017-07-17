@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .model.forms import LoginForm
 from .model.utility import TeacherHandle
 
@@ -52,7 +52,8 @@ def message_page(request, action, stu):
     else:
         tea_hdl.reject(stu)
 
-    return render(request, 'teacher/main_page.html', {
-        'user': tea_hdl.__str__(),
-        'stu_info': tea_hdl.get_students()
-    })
+    # return render(request, 'teacher/main_page.html', {
+    #     'user': tea_hdl.__str__(),
+    #     'stu_info': tea_hdl.get_students()
+    # })
+    return redirect('')
