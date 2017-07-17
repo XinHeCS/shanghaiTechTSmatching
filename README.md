@@ -22,3 +22,9 @@ The work is under a [MIT License](https://opensource.org/licenses/MIT)
 
 * [He Xin](https://github.com/XinHeCS)
 * [Ding Ruiyang](https://github.com/JohnDing1995)
+
+## Bugs to solve
+表格验证
+
+修改信息表格初始化，缺返回按钮
+
