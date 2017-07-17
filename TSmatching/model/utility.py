@@ -26,7 +26,7 @@ class TeacherHandle:
     # Get information of the student
     @staticmethod
     def get_student_info(stu):
-        stu_info_obj = Students.objects.get(user_name=stu.student.user_name)
+        stu_info_obj = Students.objects.get(user_name=stu)
 
         return {
             'name': stu_info_obj.name,
@@ -34,7 +34,8 @@ class TeacherHandle:
             'GPA': stu_info_obj.gpa,
             'phone_number': stu_info_obj.phone_number,
             'we_chat': stu_info_obj.email,
-            'description': stu_info_obj.comment
+            'description': stu_info_obj.comment,
+            'photo': stu_info_obj.photo
         }
 
     # Get student object
@@ -67,13 +68,22 @@ class TeacherHandle:
                 # student can apply for the teacher he prefer most,
                 # while the teacher doesn't reject him
                 if stu.first.name == self.__name:
-                    ret.append(TeacherHandle.get_student_info(stu))
+                    ret.append(TeacherHandle.get_student_info(stu.student_id))
             elif not stu.second_rejected:
                 if stu.second.name == self.__name:
-                    ret.append(TeacherHandle.get_student_info(stu))
+                    ret.append(TeacherHandle.get_student_info(stu.student_id))
             elif not stu.third_rejected:
-                if stu.third.ame == self.__name:
-                    ret.append(TeacherHandle.get_student_info(stu))
+                if stu.third.name == self.__name:
+                    ret.append(TeacherHandle.get_student_info(stu.student_id))
+
+        return ret
+
+    # Get the students this teacher has accepted
+    def get_accepted_students(self):
+        stu_list = Students.objects.filter(accepted=self.__id)
+        ret = []
+        for stu in stu_list:
+            ret.append(TeacherHandle.get_student_info(stu.user_name))
 
         return ret
 
@@ -101,7 +111,7 @@ class TeacherHandle:
         return [True, '']
 
     # Reject the student stu
-    def reject(self, stu):
+    def reject(self, stu, action):
         # Get student and teacher object
         tea_obj = Teachers.objects.get(id=self.__id)
         stu_obj = Students.objects.get(name=stu)
@@ -109,13 +119,17 @@ class TeacherHandle:
         stu_obj.accepted = 0
         # Update selection table
         stu_select = Selection.objects.get(student_id=stu_obj.user_name)
-        if not stu_select.first_rejected:
+        # check whether
+        if not stu_select.first_rejected and\
+                stu_select.first.name == self.__name:
             stu_select.first_rejected = True
-        elif not stu_select.second_rejected:
+        elif not stu_select.second_rejected and\
+                stu_select.second.name == self.__name:
             stu_select.second_rejected = True
-        elif not stu_select.third_rejected:
+        elif not stu_select.third_rejected and\
+                stu_select.second.name == self.__name:
             stu_select.third_rejected = True
-        if tea_obj.recruit_number < 2:
+        if action == 'reject_ac' and tea_obj.recruit_number < 2 :
             tea_obj.recruit_number = tea_obj.recruit_number + 1
 
         # Save all the changes

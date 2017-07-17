@@ -1,0 +1,150 @@
+{%  extends 'teacher/base.html' %}
+{%  load staticfiles %}
+
+{% block style %}
+<style>
+    .panel-box {
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div role="tabpanel" class="tab-pane fade" id="student">
+    {% if ac_students %}
+        <div class="panel panel-success panel-box">
+            <!-- panel contents -->
+            <div class="panel-heading">
+                Students you have accepted
+            </div>
+            <div class="panel-body">
+                <p>Something about the graduate Sstudents admission blablabla...</p>
+            </div>
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-success">
+                {% for student in ac_students %}
+                    {% if forloop.first %}
+                    <div class="panel-heading" role="tab" id="heading-{{ student.name }}">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                               href="#{{ student.name }}" aria-expanded="true" aria-controls="{{ student.name }}">
+                                {{ student.name }}
+                            </a>
+                          </h4>
+                    </div>
+                    <div id="{{ student.name }}" class="panel-collapse collapse in"
+                         role="tabpanel" aria-labelledby="heading-{{ student.name }}">
+                        <div class="panel-body">
+                            <div class="container">
+                                <div class="col-md-2">
+                                    <img src="{% static student.photo %}" width="200" height="260"
+                                         alt="Photo Not Found" class="img-rounded">
+                                </div>
+                                <div class="col-md-9">
+                                    <dl class="dl-horizontal">
+                                        <dt><h3>School:</h3></dt>
+                                        <dd><h3><small>{{ student.school }}</small></h3></dd>
+                                        <dt><h3>GPA:</h3></dt>
+                                        <dd><h3><small>{{ student.GPA }}</small></h3></dd>
+                                        <dt><h3>Tel:</h3></dt>
+                                        <dd><h3><small>{{ student.phone_number }}</small></h3></dd>
+                                        <dt><h3>We Chat:</h3></dt>
+                                        <dd><h3><small>{{ student.we_chat }}</small></h3></dd>
+                                    </dl>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <h3>Description:</h3>
+                                        <h3><small>
+                                            {{ student.description }}
+                                        </small></h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <br>
+                                    <div class="col-md-9">
+                                        <a href="{% url 'tea_mess_page' 'reject_ac' student.name %}" target="_self"
+                                           class="btn btn-lg btn-danger" role="button">
+                                            Reject
+                                        </a>
+                                        <a href="#" class="btn btn-lg btn-info" role="button">
+                                            Contact
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="panel-heading" role="tab" id="heading-{{ student.name }}">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                               href="#{{ student.name }}" aria-expanded="false" aria-controls="collapseTwo">
+                                {{ student.name }}
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="{{ student.name }}" class="panel-collapse collapse"
+                         role="tabpanel" aria-labelledby="heading-{{ student.name }}">
+                        <div class="panel-body">
+                            <div class="container">
+                                <div class="col-md-2">
+                                    <img src="{% static student.photo %}" width="200" height="260"
+                                         alt="Photo Not Found" class="img-rounded">
+                                </div>
+                                <div class="col-md-9">
+                                    <dl class="dl-horizontal">
+                                        <dt><h3>School:</h3></dt>
+                                        <dd><h3><small>{{ student.school }}</small></h3></dd>
+                                        <dt><h3>GPA:</h3></dt>
+                                        <dd><h3><small>{{ student.GPA }}</small></h3></dd>
+                                        <dt><h3>Tel:</h3></dt>
+                                        <dd><h3><small>{{ student.phone_number }}</small></h3></dd>
+                                        <dt><h3>We Chat:</h3></dt>
+                                        <dd><h3><small>{{ student.we_chat }}</small></h3></dd>
+                                    </dl>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <h3>Description:</h3>
+                                        <h3><small>
+                                            {{ student.description }}
+                                        </small></h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <br>
+                                    <div class="col-md-9">
+                                        <a href="{% url 'tea_mess_page' 'reject_ac' student.name %}" target="_self"
+                                           class="btn btn-lg btn-danger" role="button">
+                                            Reject
+                                        </a>
+                                        <a href="#" class="btn btn-lg btn-info" role="button">
+                                            Contact
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="panel panel-success panel-box">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                Students you have accepted
+            </div>
+            <div class="panel-body">
+                <p>
+                    There are no student you have selected!!
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

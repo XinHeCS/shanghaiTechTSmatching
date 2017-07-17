@@ -22,7 +22,8 @@ def login(request):
             if tea_hdl.can_login():
                 return render(request, 'teacher/main_page.html', {
                     'user': user_name,
-                    'stu_info': tea_hdl.get_students()
+                    'stu_info': tea_hdl.get_students(),
+                    'ac_stu_info': tea_hdl.get_accepted_students()
                 })
             else:
                 return render(request, 'teacher/login.html', {
@@ -40,20 +41,22 @@ def message_page(request, action, stu):
     global tea_hdl
 
     if not tea_hdl:
-        form = LoginForm()
-        return render(request, 'teacher/login.html', {
-            'form': form,
-            'success_login': True
-        })
+        return redirect('tea_login_page')
 
     # check actions
     if action == 'accept':
-        tea_hdl.accept(stu)
+        success, err = tea_hdl.accept(stu)
+        return render(request, 'teacher/main_page.html', {
+            'user': tea_hdl.__str__(),
+            'stu_info': tea_hdl.get_students(),
+            'ac_stu_info': tea_hdl.get_accepted_students(),
+            'success': success,
+            'err': err
+        })
     else:
-        tea_hdl.reject(stu)
-
-    # return render(request, 'teacher/main_page.html', {
-    #     'user': tea_hdl.__str__(),
-    #     'stu_info': tea_hdl.get_students()
-    # })
-    return redirect('')
+        tea_hdl.reject(stu, action)
+        return render(request, 'teacher/main_page.html', {
+            'user': tea_hdl.__str__(),
+            'stu_info': tea_hdl.get_students(),
+            'ac_stu_info': tea_hdl.get_accepted_students()
+        })

@@ -121,7 +121,7 @@
     <div class="tab-content">
         {% include "./home.html" %}
         {% include "./messages.html" with students=stu_info %}
-    <div role="tabpanel" class="tab-pane fade" id="student">...</div>
+        {% include "./student.html" with ac_students=ac_stu_info %}
     <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
     </div>
 </div>
