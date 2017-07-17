@@ -54,12 +54,12 @@
 {% endblock %}
 
 {% block content %}
+<body>
 <div class="container">
     <h2 class="form-signin-heading">Please sign in</h2>
     <form class="form-signin" method="post">
         {% csrf_token %}
         {% for field in form %}
-            <!--<label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>-->
             {{ field }}
         {% endfor %}
         <div class="checkbox">
@@ -78,8 +78,6 @@
         </div>
         {% endif %}
     </form>
-
-
-
 </div>
+</body>
 {% endblock %}}

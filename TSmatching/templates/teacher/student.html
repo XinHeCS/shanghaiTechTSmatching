@@ -1,5 +1,5 @@
-{% extends 'teacher/base.html' %}
-{% load staticfiles %}
+{%  extends 'teacher/base.html' %}
+{%  load staticfiles %}
 
 {% block style %}
 <style>
@@ -10,20 +10,20 @@
 {% endblock %}
 
 {% block content %}
-<div role="tabpanel" class="tab-pane fade" id="messages">
-    {% if students %}
+<div role="tabpanel" class="tab-pane fade" id="student">
+    {% if ac_students %}
         <div class="panel panel-success panel-box">
             <!-- panel contents -->
             <div class="panel-heading">
-                Selecting your favorite students
+                Students you have accepted
             </div>
             <div class="panel-body">
-                <p>Something about the graduate students admission blablabla...</p>
+                <p>Something about the graduate Sstudents admission blablabla...</p>
             </div>
 
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-success">
-                {% for student in students %}
+                {% for student in ac_students %}
                     {% if forloop.first %}
                     <div class="panel-heading" role="tab" id="heading-{{ student.name }}">
                         <h4 class="panel-title">
@@ -64,11 +64,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-md-9">
-                                        <a href="{% url 'tea_mess_page' 'accept' student.name %}" target="_self"
-                                           class="btn btn-lg btn-success" role="button">
-                                            Accept
-                                        </a>
-                                        <a href="{% url 'tea_mess_page' 'reject' student.name %}" target="_self"
+                                        <a href="{% url 'tea_mess_page' 'reject_ac' student.name %}" target="_self"
                                            class="btn btn-lg btn-danger" role="button">
                                             Reject
                                         </a>
@@ -120,11 +116,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-md-9">
-                                        <a href="{% url 'tea_mess_page' 'accept' student.name %}" target="_self"
-                                           class="btn btn-lg btn-success" role="button">
-                                            Accept
-                                        </a>
-                                        <a href="{% url 'tea_mess_page' 'reject' student.name %}" target="_self"
+                                        <a href="{% url 'tea_mess_page' 'reject_ac' student.name %}" target="_self"
                                            class="btn btn-lg btn-danger" role="button">
                                             Reject
                                         </a>
@@ -145,21 +137,14 @@
         <div class="panel panel-success panel-box">
             <!-- Default panel contents -->
             <div class="panel-heading">
-                Selecting your favorite students
+                Students you have accepted
             </div>
             <div class="panel-body">
                 <p>
-                    There are no student selecting you!!!
+                    There are no student you have selected!!
                 </p>
             </div>
         </div>
     {% endif %}
 </div>
 {% endblock %}
-<!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry-->
-<!--richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.-->
-<!--Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,-->
-<!--sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.-->
-<!--Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.-->
-<!--Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,-->
-<!--raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
