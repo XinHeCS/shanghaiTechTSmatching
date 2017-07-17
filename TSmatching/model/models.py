@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 # The teacher table
 class Teachers(models.Model):
-    id = models.CharField(primary_key=True, max_length=18)
+    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=10)
     password = models.CharField(max_length=30)
     work_place = models.CharField(max_length=20)
@@ -32,7 +32,7 @@ class Students(models.Model):
     ranking = models.CharField(default="", max_length=10)
     comment = models.TextField(default="")
     # True if this student has been accepted
-    accepted = models.BooleanField(default=False)
+    accepted = models.IntegerField(default=0)
     attachment = models.FileField(upload_to = './attachment', null=True)
     photo = models.ImageField(upload_to='./img', null=True)
 

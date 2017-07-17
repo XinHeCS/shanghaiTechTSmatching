@@ -55,18 +55,11 @@
 
 {% block content %}
 <body>
-<?php
-    function make_pwd_safe() {
-        $_POST['user_pwd'] = md5($_POST['user_pwd'].trim());
-        echo $_POST['user_pwd'];
-    }
-?>
 <div class="container">
     <h2 class="form-signin-heading">Please sign in</h2>
     <form class="form-signin" method="post">
         {% csrf_token %}
         {% for field in form %}
-            <!--<label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>-->
             {{ field }}
         {% endfor %}
         <div class="checkbox">

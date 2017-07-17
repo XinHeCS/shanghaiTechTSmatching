@@ -9,7 +9,6 @@ def login(request):
     global tea_hdl
 
     if request.method == 'POST':
-        print(request.POST['user_pwd'])
         form = LoginForm(request.POST)
 
         # check the teacher's ID
@@ -46,6 +45,12 @@ def message_page(request, action, stu):
             'form': form,
             'success_login': True
         })
+
+    # check actions
+    if action == 'accept':
+        tea_hdl.accept(stu)
+    else:
+        tea_hdl.reject(stu)
 
     return render(request, 'teacher/main_page.html', {
         'user': tea_hdl.__str__(),

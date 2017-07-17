@@ -9,8 +9,7 @@ class LoginForm(forms.Form):
                                 }))
     user_pwd = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Enter your password',
-        'onchange': 'make_pwd_safe()'
+        'placeholder': 'Enter your password'
     }))
 
 class RegisterForm(forms.Form):

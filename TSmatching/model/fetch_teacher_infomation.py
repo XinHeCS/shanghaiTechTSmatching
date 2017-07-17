@@ -1,5 +1,6 @@
 import requests
 from lxml import html
+from .models import Teachers
 
 class TeacherInformationSpider():
     def __init__(self):
