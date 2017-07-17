@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+
     'TSmatching',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,7 +121,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_URL = '/student/login/'
 
 MEDIA_ROOT = "/Users/dingruiyang/Projects/shanghaiTechTSmatching/static"
 
