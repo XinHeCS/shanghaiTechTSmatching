@@ -1,11 +1,30 @@
 {% extends 'students/base.html' %}
 {% block content %}
-<div class="row col-md-10 col-md-offset-1" style="text-align: center;margin-left: auto">
-        <div class="col-md-4">
-          <h2>我的信息</h2>
-            <p>第一志愿：{{ first_teacher }}</p>
-            <p>第二志愿：{{ first_teacher }}</p>
-            <p>第三志愿：{{ first_teacher }}</p>
+         <nav class="navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header" >
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ShanghaiTech</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
+          <div class="navbar-right">
+                <button type="button" onclick="window.location.href='./logout'" class="btn btn-default navbar-btn navbar-right">Log out</button>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<div class="jumbotron">
+        <div class="container">
+          <h1> 志愿选择</h1>
+            <h3>当前志愿</h3>
+            <p><small>第一志愿：{{ first_teacher }}</small></p>
+            <p><small>第二志愿：{{ second_teacher }}</small></p>
+            <p><small>第三志愿：{{ third_teacher }}</small></p>
       </div>
 </div>
     <form method="post" class="col-md-10 col-md-offset-1">
@@ -54,10 +73,10 @@
             <dl>
                 <dt><h5 class="list-group-item-heading">{{ each_t.name}}</h5>
                     <div class="list-group-item-text">
-                        电话号码:{{ each_t.tel }}<br>
-                        电子邮箱:{{ each_t.email }}<br>
-                        办公地址:{{ each_t.address }}<br>
-                        研究领域:{{ each_t.area }}<br>
+                        <small>电话号码:{{ each_t.phone_number }}</small><br>
+                        <small>电子邮箱:{{ each_t.email }}</small><br>
+                        <small>办公地址:{{ each_t.work_place }}</small><br>
+                        <small>研究领域:{{ each_t.research_area }}</small><br>
                     </div>
             </dl>
                    </div>

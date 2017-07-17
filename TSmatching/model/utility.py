@@ -122,4 +122,3 @@ class TeacherHandle:
         stu_obj.save()
         tea_obj.save()
         stu_select.save()
-
