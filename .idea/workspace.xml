@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TSmatching/model/fetch_teacher_infomation.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/model/models.py" afterPath="$PROJECT_DIR$/TSmatching/model/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/model/utility.py" afterPath="$PROJECT_DIR$/TSmatching/model/utility.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/stu_urls.py" afterPath="$PROJECT_DIR$/TSmatching/stu_urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/stu_view.py" afterPath="$PROJECT_DIR$/TSmatching/stu_view.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/main_page.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/main_page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/tests.py" afterPath="$PROJECT_DIR$/TSmatching/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" afterPath="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,42 +68,6 @@
         <option name="myItemId" value="ts_matching" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="TSmatching_students" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Django default" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ts_matching" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="TSmatching_selection" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Django default" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="ts_matching" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
@@ -121,11 +76,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stu_view.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stu_view.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="99" column="49" lean-forward="false" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
+            <state relative-caret-position="334">
+              <caret line="106" column="43" lean-forward="true" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -133,8 +88,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="query.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.6/site-packages/django/db/models/query.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="379" column="0" lean-forward="false" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ts_matching.TSmatching_selection" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/a581d516/01b8566b-704d-466c-afdb-f0b7c199f508/ts_matching.TSmatching_selection">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ts_matching.TSmatching_teachers" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/a581d516/01b8566b-704d-466c-afdb-f0b7c199f508/ts_matching.TSmatching_teachers">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -163,8 +143,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TSmatching/model/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="104" column="16" lean-forward="false" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="16" />
+            <state relative-caret-position="-338">
+              <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -177,7 +157,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1500282023000" expanded="true" signature="168:201" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -242,8 +224,8 @@
         <option value="$PROJECT_DIR$/shanghaiTechTSmatching/settings.py" />
         <option value="$PROJECT_DIR$/TSmatching/test_spider.py" />
         <option value="$PROJECT_DIR$/shanghaiTechTSmatching/spider/fetch_teacher_infomation.py" />
-        <option value="$PROJECT_DIR$/TSmatching/model/models.py" />
         <option value="$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html" />
+        <option value="$PROJECT_DIR$/TSmatching/model/models.py" />
         <option value="$PROJECT_DIR$/TSmatching/stu_view.py" />
       </list>
     </option>
@@ -743,7 +725,7 @@
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -801,14 +783,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/student/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student/templates/students/main_page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -930,23 +904,23 @@
         <state relative-caret-position="151">
           <caret line="41" column="83" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="41" selection-end-column="83" />
           <folding>
-            <marker date="1500211220000" expanded="true" signature="5693:5917" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="5693:5956" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="5693:7232" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="5693:7263" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="5693:7290" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6006:6386" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6066:6347" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6173:6304" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6180:6299" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6436:7197" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6536:7158" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6634:6730" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="6827:6923" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="7018:7115" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="7475:7797" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="7559:7627" ph="..." />
-            <marker date="1500211220000" expanded="true" signature="7684:7763" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="5693:5917" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="5693:5956" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7199:7648" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7199:7679" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7199:7706" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="6006:6386" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="6066:6347" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="6173:6304" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="6180:6299" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7199:7613" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7199:7574" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="6634:6730" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7243:7339" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7434:7531" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7891:8213" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="7975:8043" ph="..." />
+            <marker date="1500282023000" expanded="true" signature="8100:8179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -990,14 +964,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="70" column="31" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="31" />
-          <folding>
-            <element signature="e#1953#1960#0#HTML" expanded="false" />
-            <element signature="e#2042#2048#0#HTML" expanded="false" />
-            <element signature="e#2048#2054#0#HTML" expanded="false" />
-            <element signature="e#2054#2060#0#HTML" expanded="false" />
-            <element signature="e#2060#2066#0#HTML" expanded="false" />
-            <element signature="e#2066#2072#0#HTML" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,23 +1128,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a581d516/01b8566b-704d-466c-afdb-f0b7c199f508/ts_matching.TSmatching_teachers">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/pymysql/connections.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-424">
           <caret line="386" column="26" lean-forward="true" selection-start-line="386" selection-start-column="26" selection-end-line="386" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TSmatching/model/utility.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <marker date="1500282023000" expanded="true" signature="168:201" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="77" column="10" lean-forward="true" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TSmatching/model/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/django/db/models/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="379" column="0" lean-forward="false" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1192,28 +1182,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/model/utility.py">
+    <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="77" column="10" lean-forward="true" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/model/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="104" column="16" lean-forward="false" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="16" />
+        <state relative-caret-position="334">
+          <caret line="106" column="43" lean-forward="true" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1231,13 +1205,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="99" column="49" lean-forward="false" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+    <entry file="dbDummy://dbtable:/a581d516/01b8566b-704d-466c-afdb-f0b7c199f508/ts_matching.TSmatching_teachers">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
