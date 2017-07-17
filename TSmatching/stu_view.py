@@ -84,28 +84,31 @@ def stu_edit(request):
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
 def select_teacher(request):
-    t = Teachers()
+    #t = Teachers()
     #t.spider()
     #t.save_spider_data()
     t_list = Teachers.objects.all()
     if Selection.objects.filter(student_id=request.user.username).count() == 0:
-        Selection.objects.create(student_id=request.user.username,
-                                                 first_id=" ",
-                                                 second_id=" ",
-                                                 third_id=" ")
+        Selection.objects.create(student_id=request.user.username)
 
-    stu_selection = Students.objects.get(student_id=request.user.username)
-    s1 = t.objects.get(id=stu_selection.first_id).name
-    s2 = t.objects.get(id=stu_selection.second_id).name
-    s3 = t.objects.get(id=stu_selection.third_id).name
+    stu_selection = Selection.objects.get(student_id=request.user.username)
+    try:
+        s1 = Teachers.objects.get(id=stu_selection.first_id).name
+        s2 = Teachers.objects.get(id=stu_selection.second_id).name
+        s3 = Teachers.objects.get(id=stu_selection.third_id).name
+    except Exception:
+        s1,s2,s3 = "尚未选择", "尚未选择", "尚未选择"
     if request.method == "POST":
-        selection1 = request.POST.get('t1')
-        selection2 = request.POST.get('t2')
-        selection3 = request.POST.get('t3')
+        selection1 = int(request.POST.get('t1'))+1
+        selection2 = int(request.POST.get('t2'))+1
+        selection3 = int(request.POST.get('t3'))+1
         stu_selection.first_id = selection1
         stu_selection.second_id = selection2
         stu_selection.third_id = selection3
         stu_selection.save()
+        s1 = Teachers.objects.get(id=stu_selection.first_id).name
+        s2 = Teachers.objects.get(id=stu_selection.second_id).name
+        s3 = Teachers.objects.get(id=stu_selection.third_id).name
     return render(request, 'students/teacher_selection.html', {'info':t_list,
                                                                'first_teacher':s1,
                                                                'second_teacher': s2,

@@ -7,13 +7,13 @@ from lxml import html
 # The teacher table
 class Teachers(models.Model):
     id = models.IntegerField(primary_key=True)
-    title = models.CharField(max_length=10)
+    title = models.CharField(max_length=10,null=True)
     password = models.CharField(max_length=30)
-    work_place = models.CharField(max_length=40)
+    work_place = models.CharField(max_length=40, default=" ")
     name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=25)
-    research_area = models.CharField(max_length=100)
+    email = models.EmailField(default=" ")
+    phone_number = models.CharField(max_length=25,default=" ")
+    research_area = models.CharField(max_length=100,default=" ")
     recruit_number = models.IntegerField(default=2)
     url = models.URLField()
     def __str__(self):
@@ -102,16 +102,16 @@ class Selection(models.Model):
 
     # The preference of teachers that the student willing to select
     # the teacher this student would like to select first
-    first_choice = models.ForeignKey(Teachers, name='first', on_delete=models.CASCADE)
+    first_choice = models.ForeignKey(Teachers, name='first', on_delete=models.CASCADE, null=True)
     # whether the teacher of this choice has rejected this student
     # True means rejected
     # Note that False doesn't mean that the teacher has accepted this student.
     first_rejected = models.BooleanField(default=False)
 
-    second_choice = models.ForeignKey(Teachers, name='second', on_delete=models.CASCADE)
+    second_choice = models.ForeignKey(Teachers, name='second', on_delete=models.CASCADE, null=True)
     second_rejected = models.BooleanField(default=False)
 
-    third_choice = models.ForeignKey(Teachers, name='third', on_delete=models.CASCADE)
+    third_choice = models.ForeignKey(Teachers, name='third', on_delete=models.CASCADE, null=True)
     third_rejected = models.BooleanField(default=False)
 
     def __str__(self):
