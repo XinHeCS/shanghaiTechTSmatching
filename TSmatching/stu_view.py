@@ -55,7 +55,8 @@ def stu_register(request):
 def main_page(request):
     #Students.objects.get_or_create(user_name=request.user.username)
     stu_profile = Students.objects.get(user_name=request.user.username)
-    return render(request, 'students/main_page.html',{'name':request.user.username, 'stu':stu_profile})
+    name = stu_profile.name
+    return render(request, 'students/main_page.html',{'name':name, 'stu':stu_profile})
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
 def stu_edit(request):
@@ -132,6 +133,7 @@ def log_out(request):
 #change password
 @login_required(login_url='/student/login/', redirect_field_name = None)
 def password_change(request):
+    name = Students.objects.get(user_name=request.user.username).name
     if request.method == 'POST':
         form = PasswordChangeForm(request.POST)
         #get password from User auth ad, call set_password
@@ -142,9 +144,9 @@ def password_change(request):
             #If succeed. redirect to login page
             return HttpResponseRedirect('./main',{'info':'密码已更改'})
         else:
-            return render(request, 'students/change_password.html', {'info':'请检查两次密码输入是否相同'})
+            return render(request, 'students/change_password.html', {'form':form,'info':'请检查两次密码输入是否相同','name':name})
     form = PasswordChangeForm()
-    return render(request, 'students/change_password.html', {'form':form})
+    return render(request, 'students/change_password.html', {'form':form,'name':name})
 
 # class AutoUpdate(UpdateView):
 #     model = Students

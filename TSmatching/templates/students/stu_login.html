@@ -10,6 +10,7 @@
 
     .container {
         text-align: center;
+        margin-top: auto;
     }
 
     .form-signin {
@@ -49,7 +50,7 @@
 {% endblock %}
 
 {% block content %}
-         <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
+     <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
       <div class="container">
         <div class="navbar-header" >
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -60,9 +61,17 @@
           </button>
           <a class="navbar-brand" style="color: whitesmoke" href="www.shanghaitech.edu.cn">ShanghaiTech</a>
         </div>
+        <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
+            <div class="navbar-right">
+          <div class="btn-group">
+              <button type="button" onclick="window.location.href='./signup'" class="btn btn-default navbar-btn navbar-right">Register</button>
+
+          </div>
+                </div>
+        </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="page-header" style="height: auto">
+    <div class="page-header" style="height: auto; margin-top: 90px">
       <div class="container">
           <img src="../../../static/resource/img/STU.jpg" class==img-responsive" style="width: 15%">
 
@@ -92,7 +101,7 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
   <div class="form-signin">
-       <button class="btn btn-lg btn-danger btn-block " onclick=window.location.href='./register'>Sign up</button>
+
   </div>
 
             {% if can_not_login %}
@@ -106,4 +115,13 @@
         {% endif %}
 
 </div>
+         <div id="footer" class = "footer navbar-fixed-bottom" style=" width: 100%; margin-top: 30px;">
+         <div class="footer-div" style="font-size: 14px;">
+             <br>
+             Copyright (c) 2016-2017 ShanghaiTech University All rights reserved
+             <br>
+             <small></small>
+             Developed By:He Xin & Ding Ruiyang, SIST@ShanghaiTech
+         </div>
+     </div>
 {% endblock %}}
