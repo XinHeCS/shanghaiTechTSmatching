@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/model/forms.py" afterPath="$PROJECT_DIR$/TSmatching/model/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/stu_urls.py" afterPath="$PROJECT_DIR$/TSmatching/stu_urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/stu_view.py" afterPath="$PROJECT_DIR$/TSmatching/stu_view.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/main_page.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/main_page.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html" afterPath="$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,8 +81,8 @@
       <file leaf-file-name="stu_view.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+            <state relative-caret-position="74">
+              <caret line="37" column="41" lean-forward="true" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -94,28 +90,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_page.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/main_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="58" lean-forward="false" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+            <state relative-caret-position="78">
+              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stu_edit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stu_edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="61" column="58" lean-forward="false" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+            <state relative-caret-position="116">
+              <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/TSmatching/model/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="62" lean-forward="true" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+              <caret line="6" column="62" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -147,8 +145,8 @@
       <file leaf-file-name="stu_login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="53" column="100" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="100" />
+            <state relative-caret-position="306">
+              <caret line="79" column="15" lean-forward="false" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -161,7 +159,7 @@
         <entry file="file://$PROJECT_DIR$/TSmatching/templates/teacher/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+              <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -171,7 +169,7 @@
         <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_register.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
-              <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+              <caret line="44" column="14" lean-forward="false" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -253,8 +251,8 @@
         <option value="$PROJECT_DIR$/TSmatching/stu_view.py" />
         <option value="$PROJECT_DIR$/TSmatching/templates/students/change_password.html" />
         <option value="$PROJECT_DIR$/TSmatching/model/forms.py" />
-        <option value="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
         <option value="$PROJECT_DIR$/TSmatching/templates/students/teacher_selection.html" />
+        <option value="$PROJECT_DIR$/TSmatching/templates/students/stu_login.html" />
         <option value="$PROJECT_DIR$/TSmatching/templates/students/main_page.html" />
         <option value="$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html" />
       </list>
@@ -1133,7 +1131,7 @@
     <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
-          <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+          <caret line="44" column="14" lean-forward="false" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1141,7 +1139,7 @@
     <entry file="file://$PROJECT_DIR$/TSmatching/templates/teacher/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1149,15 +1147,15 @@
     <entry file="file://$PROJECT_DIR$/TSmatching/model/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="62" lean-forward="true" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+          <caret line="6" column="62" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="53" column="100" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="100" />
+        <state relative-caret-position="306">
+          <caret line="79" column="15" lean-forward="false" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1167,22 +1165,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TSmatching/stu_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        <state relative-caret-position="74">
+          <caret line="37" column="41" lean-forward="true" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/main_page.html">
+    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="58" lean-forward="false" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+        <state relative-caret-position="116">
+          <caret line="75" column="10" lean-forward="false" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1198,13 +1196,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/stu_edit.html">
+    <entry file="file://$PROJECT_DIR$/TSmatching/templates/students/main_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="61" column="58" lean-forward="false" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+        <state relative-caret-position="78">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

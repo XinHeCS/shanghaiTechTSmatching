@@ -21,10 +21,7 @@
     </nav>
 
 <div class="jumbotron">
-<div style="text-align: right;margin-left: auto">
-
-</div>
-      <div class="container">
+     <div class="container">
         <h1 class="display-3">Welcome {{ name }}!</h1>
         <p>请选择下一步的操作</p>
 
@@ -34,7 +31,7 @@
         <div class="col-md-7">
           <h2>注册信息</h2><br>
         <div class="col-md-4">
-            <img src="{% static stu.photo %}" width="170" height="220" alt="请在信息修改中补充您的个人照" class="img-circle">
+            <img src="{% static stu.photo %}" width="200px" style="min-height:220px" alt="请在信息修改中补充您的个人照" class="img-circle">
         </div>
            <div class="col-md-7 col-md-offset-1">
            <h5>姓名：<small>{{ stu.name }}</small></h5>
