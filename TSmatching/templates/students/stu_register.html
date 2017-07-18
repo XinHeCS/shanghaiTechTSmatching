@@ -45,6 +45,24 @@
 {% endblock %}
 
 {% block content %}
+         <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
+      <div class="container">
+        <div class="navbar-header" >
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="color: whitesmoke" href="www.shanghaitech.edu.cn">ShanghaiTech</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
+          <div class="navbar-right">
+                <button type="button" onclick="window.location.href='./login'" class="btn btn-default navbar-btn navbar-right">Log In</button>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 <div class="container md-col-4 md-col-offset-4">
     <form class="form-signin" method="post">
         {% csrf_token %}
