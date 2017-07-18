@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^register',stu_view.stu_register, name='stu_register'),
     url(r'^select',stu_view.select_teacher, name='stu_select'),
     url(r'^logout',stu_view.log_out, name='logout'),
-    url(r'^accounts/login/$', auth_views.LoginView.as_view()),
+    url(r'^password_change',stu_view.password_change, name='password_change')
 ]
