@@ -1,11 +1,12 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth import update_session_auth_hash
 from django.db.models import QuerySet
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from .model.forms import RegisterForm, LoginForm, EditForm
+from .model.forms import RegisterForm, LoginForm, EditForm, PasswordChangeForm
 from .model.models import Students, Teachers, Selection
 
 
@@ -84,40 +85,66 @@ def stu_edit(request):
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
 def select_teacher(request):
-    #t = Teachers()
-    #t.spider()
-    #t.save_spider_data()
+    # the following commented code calls a spider to fetch the teacher info, use once only
+    # t = Teachers()
+    # t.spider()
+    # t.save_spider_data()
+    err = ""
     t_list = Teachers.objects.all()
     if Selection.objects.filter(student_id=request.user.username).count() == 0:
         Selection.objects.create(student_id=request.user.username)
-
+    # show current selection
     stu_selection = Selection.objects.get(student_id=request.user.username)
+    # in case of first login
     try:
         s1 = Teachers.objects.get(id=stu_selection.first_id).name
         s2 = Teachers.objects.get(id=stu_selection.second_id).name
         s3 = Teachers.objects.get(id=stu_selection.third_id).name
     except Exception:
         s1,s2,s3 = "尚未选择", "尚未选择", "尚未选择"
+    # the form returns selected teacher's id, and show teacher's name in main page
     if request.method == "POST":
         selection1 = int(request.POST.get('t1'))+1
         selection2 = int(request.POST.get('t2'))+1
         selection3 = int(request.POST.get('t3'))+1
-        stu_selection.first_id = selection1
-        stu_selection.second_id = selection2
-        stu_selection.third_id = selection3
-        stu_selection.save()
-        s1 = Teachers.objects.get(id=stu_selection.first_id).name
-        s2 = Teachers.objects.get(id=stu_selection.second_id).name
-        s3 = Teachers.objects.get(id=stu_selection.third_id).name
+        if selection1 != selection2 and selection1 !=selection3 and selection2 != selection3:
+            stu_selection.first_id = selection1
+            stu_selection.second_id = selection2
+            stu_selection.third_id = selection3
+            stu_selection.save()
+            s1 = Teachers.objects.get(id=stu_selection.first_id).name
+            s2 = Teachers.objects.get(id=stu_selection.second_id).name
+            s3 = Teachers.objects.get(id=stu_selection.third_id).name
+        else:
+            err = "请保证三个志愿有所不同"
+
     return render(request, 'students/teacher_selection.html', {'info':t_list,
                                                                'first_teacher':s1,
                                                                'second_teacher': s2,
-                                                               'third_teacher': s3
+                                                               'third_teacher': s3,
+                                                               'error':err
                                                                })
 
 def log_out(request):
     logout(request)
     return HttpResponseRedirect('./login')
+
+#change password
+@login_required(login_url='/student/login/', redirect_field_name = None)
+def password_change(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.POST)
+        #get password from User auth ad, call set_password
+        if form.is_valid() and form.cleaned_data['user_pwd'] == form.cleaned_data['user_pwd_confirm'] and request.user is not None:
+            u = User.objects.get(username=request.user.username)
+            u.set_password(form.cleaned_data['user_pwd'])
+            u.save()
+            #If succeed. redirect to login page
+            return HttpResponseRedirect('./main',{'info':'密码已更改'})
+        else:
+            return render(request, 'students/change_password.html', {'info':'请检查两次密码输入是否相同'})
+    form = PasswordChangeForm()
+    return render(request, 'students/change_password.html', {'form':form})
 
 # class AutoUpdate(UpdateView):
 #     model = Students
