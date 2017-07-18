@@ -1,5 +1,7 @@
 {% extends 'students/base.html' %}
 {% load staticfiles %}
+{% block style %}
+{% endblock %}
 {% block content %}
      <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
       <div class="container">
@@ -13,28 +15,29 @@
           <a class="navbar-brand" style="color: whitesmoke" href="www.shanghaitech.edu.cn">ShanghaiTech</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
-          <div class="navbar-right">
-                <button type="button" onclick="window.location.href='./logout'" class="btn btn-default navbar-btn navbar-right">Log out</button>
+            <div class="navbar-right">
+          <div class="btn-group">
+              <button type="button" onclick="window.location.href='./logout'" class="btn btn-default navbar-btn navbar-right">Log out</button>
+              <button type="button" onclick="window.location.href='./password_change'" class="btn btn-danger navbar-btn navbar-right">Change Password</button>
+
           </div>
+                </div>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
 <div class="jumbotron">
-<div style="text-align: right;margin-left: auto">
-
-</div>
-      <div class="container">
-        <h1 class="display-3">Welcome {{ name }}!</h1>
+     <div class="container">
+        <h1 class="display-3">Welcome <small>{{ name }}<small></h1>
         <p>请选择下一步的操作</p>
 
       </div>
     </div>
-<div class="col-md-10 col-md-offset-1 ">
+<div class="container" style="height: 500px;">
         <div class="col-md-7">
           <h2>注册信息</h2><br>
         <div class="col-md-4">
-            <img src="{% static stu.photo %}" width="170" height="220" alt="请在信息修改中补充您的个人照" class="img-circle">
+            <img src="{% static stu.photo %}" width="200px" style="min-height:220px" alt="请在信息修改中补充您的个人照" class="img-circle">
         </div>
            <div class="col-md-7 col-md-offset-1">
            <h5>姓名：<small>{{ stu.name }}</small></h5>
@@ -78,4 +81,14 @@
         </div>
 </div>
       </div>
+    <div class="push"><br></div>
+     <div id="footer" class = "footer navbar-fixed-bottom" style=" width: 100%; margin-top: 60px;">
+         <div class="footer-div" style="font-size: 14px;">
+             <br>
+             Copyright (c) 2016-2017 ShanghaiTech University All rights reserved
+             <br>
+             <small></small>
+             Developed By:He Xin & Ding Ruiyang, SIST@ShanghaiTech
+         </div>
+     </div>
 {% endblock %}
