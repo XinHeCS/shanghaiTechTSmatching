@@ -3,13 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
 from django.db.models import QuerySet
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 from .model.forms import RegisterForm, LoginForm, EditForm, PasswordChangeForm
 from .model.models import Students, Teachers, Selection
-
-
+from .model.utility import Captcha
+import io
 # Log student in.
 def stu_login(request):
     if request.method == 'POST':
@@ -18,9 +18,7 @@ def stu_login(request):
             # Get user name and password
             user_name = form.cleaned_data['user_name']
             user_pwd = form.cleaned_data['user_pwd']
-
             user = authenticate(username=user_name, password=user_pwd)
-            print(user)
                 # check the login info
                 # if failed, jump to the register page
             if user is not None:
@@ -34,22 +32,27 @@ def stu_login(request):
     return render(request, 'students/stu_login.html', {'form': form, 'can_not_login': False})
 
 def stu_register(request):
+
     if request.method == 'POST':
+        code = request.session['check_code']
         form = RegisterForm(request.POST)
         if form.is_valid() and form.cleaned_data['user_pwd'] == form.cleaned_data['user_pwd_confirm']:
-            user_name = form.cleaned_data['user_name']
-            password = form.cleaned_data['user_pwd']
-            email = form.cleaned_data['user_email']
-            user = User.objects.create_user(user_name,"",password)
-            #create an entry in student which connected with auth table
-            stu = Students(user_name=user_name,email=email)
-            stu.save()
-            return HttpResponseRedirect('./login')
+            if code.lower() == form.cleaned_data['verification_code'].lower():
+                user_name = form.cleaned_data['user_name']
+                password = form.cleaned_data['user_pwd']
+                email = form.cleaned_data['user_email']
+                user = User.objects.create_user(user_name,"",password)
+                #create an entry in student which connected with auth table
+                stu = Students(user_name=user_name,email=email)
+                stu.save()
+                return HttpResponseRedirect('./login')
+            else:
+                return render(request, 'students/stu_register.html', {'form': form, 'error': '请检查验证码是否正确'})
         else:
-            return render(request, 'students/stu_register.html', {'form' : form,'err' : '请检查用户名密码是否符合要求'})
+            return render(request, 'students/stu_register.html', {'form' : form,'error' : '请检查用户名密码是否符合要求'})
     else:
         form = RegisterForm()
-    return render(request, 'students/stu_register.html', {'form':form})
+    return render(request, 'students/stu_register.html', {'form':form,'error':''})
 #show current user's profile
 @login_required(login_url='/student/login/', redirect_field_name = None)
 def main_page(request):
@@ -148,6 +151,15 @@ def password_change(request):
     form = PasswordChangeForm()
     return render(request, 'students/change_password.html', {'form':form,'name':name})
 
+def create_code_image(request):
+    code = Captcha(50, 200)
+    code_img = io.BytesIO()
+    chars = code.captcha_generation()
+    code_str = ''.join(chars)
+    request.session['check_code'] = code_str
+    img = code.get_img()
+    img.save(code_img, 'PNG')
+    return HttpResponse(code_img.getvalue())
 # class AutoUpdate(UpdateView):
 #     model = Students
 #     template_name_suffix = '_update_form'

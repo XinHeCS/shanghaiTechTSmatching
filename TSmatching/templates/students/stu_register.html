@@ -12,6 +12,7 @@
       max-width: 330px;
       padding: 15px;
       margin: 0 auto;
+        margin-top: 100px;
     }
     .form-signin .form-signin-heading,
     .form-signin .checkbox {
@@ -43,7 +44,14 @@
     }
 </style>
 {% endblock %}
+{% block script %}
 
+     <script>
+         function refresh_check_code(ths) {
+                 ths.src += '?';
+         }
+     </script>
+{% endblock %}
 {% block content %}
          <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
       <div class="container">
@@ -54,11 +62,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" style="color: whitesmoke" href="www.shanghaitech.edu.cn">ShanghaiTech</a>
+          <a class="navbar-brand" style="color: whitesmoke" href="http://www.shanghaitech.edu.cn">ShanghaiTech University</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
           <div class="navbar-right">
-                <button type="button" onclick="window.location.href='./login'" class="btn btn-default navbar-btn navbar-right">Log In</button>
+                <button type="button" onclick="window.location.href='./login'" class="btn btn-default navbar-btn navbar-right">Login</button>
           </div>
         </div><!--/.nav-collapse -->
       </div>
@@ -74,8 +82,21 @@
 {#        <input type="password" id="password" class="form-control" placeholder="Password" required>#}
 {#                <label for="repeatPassword" class="sr-only">Repeat Your Password</label>#}
 {#        <input type="password" id="repeatPassword" class="form-control" placeholder="Repeat your Password" required>#}
+        <div align="center" style="margin-top: 20px;margin-bottom: 20px">
+            <img id="check_code_img" src="/student/code_img/" onclick="refresh_check_code(this)">
+        </div>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-        {{ err }}
     </form>
+ {% if error !=  "" %}
+        <div class="alert alert-danger alert-dismissible alert-box" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                </span>
+            </button>
+            {{ error }}
+
+</div>
+{% endif %}
 </div>
 {% endblock %}

@@ -15,6 +15,7 @@ class Teachers(models.Model):
     research_area = models.CharField(max_length=100,default=" ")
     recruit_number = models.IntegerField(default=2)
     url = models.URLField()
+    user_name = models.CharField(max_length=16, null=False, default=" ")
     def __str__(self):
         return self.name
 
@@ -24,7 +25,7 @@ class Teachers(models.Model):
         r = requests.get(url)
         r.encoding = 'utf-8'
         tree = html.fromstring(r.text)
-        for i in range(2, 37):
+        for i in range(2, 38):
             teacher_info_single = {}
             base_xpath = '//*[@id="lim"]/div/div[1]/div[2]/div[2]/div[' + str(i) + ']'
             teacher_info_single['name'] = tree.xpath(base_xpath + '/div[1]/a/text()')
@@ -63,7 +64,8 @@ class Teachers(models.Model):
             print(each_teacher)
             print(i)
             teacher_info = Teachers(id=i)
-            teacher_info.name=each_teacher['name'][0].strip(' ')
+            teacher_info.name = each_teacher['name'][0].strip(' ')
+            teacher_info.user_name = teacher_info.name.split('/')[1].split(' ')[1]
             teacher_info.phone_number=each_teacher['tel'][0].strip(' ')
             teacher_info.email=each_teacher['email'][0].strip(' ')
             teacher_info.work_place= " " if i==18 else each_teacher['address'][0].strip(' ')

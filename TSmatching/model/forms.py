@@ -32,6 +32,10 @@ class RegisterForm(forms.Form):
         'class': 'form-control',
         'placeholder': 'Email address'
     }))
+    verification_code = forms.CharField(label='Verification Code', max_length=4, widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Enter Characters Below'
+    }))
 
 class PasswordChangeForm(forms.Form):
     user_pwd = forms.CharField(label='Password:', widget=forms.PasswordInput(attrs={
