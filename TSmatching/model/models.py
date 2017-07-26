@@ -82,7 +82,7 @@ class Students(models.Model):
     date_of_birth = models.DateField(default="1970-01-01")
     phone_number = models.CharField(max_length=25, default="")
     university = models.CharField(max_length=25, default="")
-    major = models.CharField(max_length=25, default="")
+    major = models.CharField(max_length=40, default="")
     gpa = models.CharField(default="", max_length=10)
     email = models.EmailField(default="")
     ranking = models.CharField(default="", max_length=10)
