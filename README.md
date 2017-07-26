@@ -24,7 +24,6 @@ The work is under a [MIT License](https://opensource.org/licenses/MIT)
 * [Ding Ruiyang](https://github.com/JohnDing1995)
 
 ## Bugs to solve
-表格验证
-
-修改信息表格初始化，缺返回按钮
-
+表格验证与数据库不匹配
+## To Do
+优化信息编辑模块

@@ -1,3 +1,6 @@
+
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import random
 from .models import Students, Teachers, Selection
 
 # This class is used for checking the teacher users
@@ -136,3 +139,34 @@ class TeacherHandle:
         stu_obj.save()
         tea_obj.save()
         stu_select.save()
+
+class Captcha:
+    def __init__(self, h, w):
+        self.__height = h
+        self.__width = w
+        self.image = Image.new('RGB', (self.__width, self.__height), (255, 255, 255))
+        self.chars = []
+
+
+    def rndChar(self):
+        return chr(random.randint(65, 90))
+
+    def rndColor(self):
+        return (random.randint(64, 255), random.randint(64, 255), random.randint(64, 255))
+
+    def rndColor2(self):
+        return (random.randint(32, 127), random.randint(32, 127), random.randint(32, 127))
+
+    def captcha_generation(self):
+        font = ImageFont.truetype('Arial.ttf', 36)
+        draw = ImageDraw.Draw(self.image)
+        for x in range(self.__width):
+            for y in range(self.__height):
+                draw.point((x, y), fill=self.rndColor())
+        for t in range(4):
+            self.chars.append( self.rndChar())
+            draw.text((50 * t + 10, 10),self.chars[t], font=font, fill=self.rndColor2())
+        return self.chars
+    def get_img(self):
+        image = self.image.filter(ImageFilter.BLUR)
+        return image
