@@ -102,7 +102,7 @@ def stu_edit(request):
             stu.sex = form.cleaned_data['stu_sex']
             stu.photo = form.cleaned_data['stu_pic']
             stu.save()
-            return render(request, 'students/stu_edit.html', {'form': form})
+            return render(request, 'students/stu_edit.html', {'form': form, 'info': "个人信息已修改"})
     return render(request, 'students/stu_edit.html', {'form':form})
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
