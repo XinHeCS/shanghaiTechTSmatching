@@ -170,3 +170,8 @@ class Captcha:
     def get_img(self):
         image = self.image.filter(ImageFilter.BLUR)
         return image
+
+class NullDefault:
+    def cleaned_data_not_null(self, label, current_form):
+        if current_form.cleaned_data[label] is None:
+            pass

@@ -9,6 +9,7 @@ from django.urls import reverse
 from .model.forms import RegisterForm, LoginForm, EditForm, PasswordChangeForm
 from .model.models import Students, Teachers, Selection
 from .model.utility import Captcha
+from django.views.generic.edit import UpdateView
 import io
 # Log student in.
 def stu_login(request):
@@ -63,14 +64,31 @@ def main_page(request):
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
 def stu_edit(request):
-    form = EditForm()
+    stu = Students.objects.get(user_name=request.user.username)
+    data = {
+        'stu_id':stu.resident_id,
+        'stu_name':stu.name,
+        'stu_birth': stu.date_of_birth,
+        'stu_email': stu.email,
+        'stu_phone_number': stu.phone_number,
+        'stu_university': stu.university,
+        'stu_major': stu.major,
+        'stu_gpa': stu.gpa,
+        'stu_ranking': stu.ranking,
+        'stu_comment': stu.comment,
+        'stu_attachment': stu.attachment,
+        'stu_sex': stu.sex,
+        'stu_pic': stu.photo
+    }
+    form = EditForm(initial=data)
     if request.method == 'POST':
         form = EditForm(request.POST, request.FILES)
         form.encoding = 'utf-8'
         print(form.is_valid())
         if form.is_valid():
-            stu = Students.objects.get(user_name=request.user.username)
+
             stu.resident_id = form.cleaned_data['stu_id']
+            print(form.cleaned_data['stu_id'])
             stu.name = form.cleaned_data['stu_name']
             stu.date_of_birth = form.cleaned_data['stu_birth']
             stu.email = form.cleaned_data['stu_email']
@@ -84,7 +102,7 @@ def stu_edit(request):
             stu.sex = form.cleaned_data['stu_sex']
             stu.photo = form.cleaned_data['stu_pic']
             stu.save()
-            return render(request, 'students/stu_edit.html', {'form': form})
+            return render(request, 'students/stu_edit.html', {'form': form, 'info': "个人信息已修改"})
     return render(request, 'students/stu_edit.html', {'form':form})
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
@@ -172,3 +190,4 @@ def create_code_image(request):
 #             'user_name': self.request.user
 #         })
 #         return kwargs
+
