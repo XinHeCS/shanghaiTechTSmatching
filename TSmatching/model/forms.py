@@ -5,11 +5,11 @@ class LoginForm(forms.Form):
                                 max_length='50',
                                 required=True, strip=True,
                                 widget=forms.TextInput(attrs={
-                                    'class': 'form-control',
+                                    'class': 'form-control input-box',
                                     'placeholder': 'Enter your name'
                                 }))
     user_pwd = forms.CharField(label='Password:', widget=forms.PasswordInput(attrs={
-        'class': 'form-control',
+        'class': 'form-control input-box',
         'placeholder': 'Enter your password'
     }))
 
