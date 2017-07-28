@@ -2,13 +2,24 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Django default" uuid="01b8566b-704d-466c-afdb-f0b7c199f508">
-      <database-info product="MySQL" version="5.7.18" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <database-info product="MySQL" version="5.7.19-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <introspection-schemas>*:ts_matching</introspection-schemas>
+    </data-source>
+    <data-source name="TS_matching@localhost" uuid="9ad04a0b-f5f4-434d-b371-4d703f07f5a8">
+      <database-info product="MySQL" version="5.7.19-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:TS_matching</introspection-schemas>
     </data-source>
   </component>
 </project>

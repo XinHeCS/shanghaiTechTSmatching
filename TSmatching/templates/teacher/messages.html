@@ -6,36 +6,44 @@
     .panel-box {
         margin-top: 20px;
     }
+
+    .tab-card {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        border: 0px;
+    }
+
 </style>
 {% endblock %}
 
 {% block content %}
 <div role="tabpanel" class="tab-pane fade" id="messages">
     {% if students %}
-        <div class="panel panel-success panel-box">
+            <div class="panel panel-box tab-card">
             <!-- panel contents -->
-            <div class="panel-heading">
-                Selecting your favorite students
+            <div class="panel-heading tab-card">
+                <h4>Selecting your favorite students</h4>
             </div>
             <div class="panel-body">
                 <p>Something about the graduate students admission blablabla...</p>
             </div>
 
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-success">
+                <div class="panel tab-card">
                 {% for student in students %}
                     {% if forloop.first %}
-                    <div class="panel-heading" role="tab" id="heading-{{ student.name }}">
+                    <div class="panel-heading tab-card" role="tab" id="heading-{{ student.name }}">
                         <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                            <h4><a role="button" data-toggle="collapse" data-parent="#accordion"
+                                   style="color: white"
                                href="#{{ student.name }}" aria-expanded="true" aria-controls="{{ student.name }}">
                                 {{ student.name }}
-                            </a>
+                            </a></h4>
                           </h4>
                     </div>
                     <div id="{{ student.name }}" class="panel-collapse collapse in"
                          role="tabpanel" aria-labelledby="heading-{{ student.name }}">
-                        <div class="panel-body">
+                        <div class="panel-body" style="border-top: 0px">
                             <div class="container">
                                 <div class="col-md-2">
                                     <img src="{% static student.photo %}" width="200" height="260"
@@ -81,17 +89,18 @@
                         </div>
                     </div>
                     {% else %}
-                    <div class="panel-heading" role="tab" id="heading-{{ student.name }}">
+                    <div class="panel-heading tab-card" role="tab" id="heading-{{ student.name }}">
                         <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                            <h4><a class="collapsed" role="button" data-toggle="collapse"
+                               data-parent="#accordion" style="color: white"
                                href="#{{ student.name }}" aria-expanded="false" aria-controls="collapseTwo">
                                 {{ student.name }}
-                            </a>
+                            </a></h4>
                         </h4>
                     </div>
                     <div id="{{ student.name }}" class="panel-collapse collapse"
                          role="tabpanel" aria-labelledby="heading-{{ student.name }}">
-                        <div class="panel-body">
+                        <div class="panel-body" style="border-top: 0px">
                             <div class="container">
                                 <div class="col-md-2">
                                     <img src="{% static student.photo %}" width="200" height="260"
@@ -142,9 +151,9 @@
             </div>
         </div>
     {% else %}
-        <div class="panel panel-success panel-box">
+        <div class="panel panel-box tab-card">
             <!-- Default panel contents -->
-            <div class="panel-heading">
+            <div class="panel-heading tab-card">
                 Selecting your favorite students
             </div>
             <div class="panel-body">

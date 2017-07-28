@@ -49,7 +49,7 @@
 {% endblock %}
 
 {% block content %}
-         <nav class="navbar-inverse navbar-fixed-top">
+     <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
 
       <div class="container">
         <div class="navbar-header" >
@@ -59,24 +59,33 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">ShanghaiTech</a>
+          <a class="navbar-brand" style="color: whitesmoke" href="http://www.shanghaitech.edu.cn">ShanghaiTech University</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
-          <div class="navbar-right">
-               <button type="button" class="btn btn-default navbar-btn" onclick="window.location.href='./main'">返回主页</button>
+          <div class="navbar-right btn-group">
+               <button type="button" class="btn btn-default navbar-btn" onclick="window.location.href='./main'">Back</button>
                 <button type="button" onclick="window.location.href='./logout'" class="btn btn-default navbar-btn navbar-right">Log out</button>
           </div>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <div style="background-color: white">
     <div class="jumbotron">
       <div class="container">
-        <h1 class="display-4">个人信息修改</h1>
+        <h1>个人信息修改</h1>
         <p>请修改您的个人信息</p>
-
       </div>
     </div>
+ {% if info !=  None%}
+        <div class="alert alert-info alert-dismissible alert-box col-md-10 col-md-offset-1" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                </span>
+            </button>
+            {{ info }}
 
+</div>
+{% endif %}
 <div class="container md-col-8 md-col-offset-2">
     <form class="form-signin" method="post" ENCTYPE="multipart/form-data">
         <!--<label for="inputEmail" class="sr-only">Email address</label>-->
@@ -96,4 +105,5 @@
     </form>
 
 </div>
+    </div>
 {% endblock %}}

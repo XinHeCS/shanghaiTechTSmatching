@@ -18,15 +18,35 @@
 
 {% block style %}
     <style>
+        body {
+            background: url({% static '/resource/img/backgroud_2.jpg' %});
+        }
+        .nav.nav-pills > li > a:hover,
+        .nav-pills > li.active > a:hover {
+            background-color: rgba(0, 1, 0, 0.2);
+        }
+
         .nav-pills > li.active > a,
-        .nav-pills > li.active > a:hover,
         .nav-pills > li.active > a:focus{
-            background-color: green;
+            background-color: rgba(0, 1, 0, 0.7);
             color: white;
         }
 
         .nav-pills > li > a {
-            color: limegreen;
+            color: white;
+        }
+        .footer{
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: white;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .name-header {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            color: white;
         }
 
     </style>
@@ -91,30 +111,33 @@
 <body onload="load_tab()">
 <div class="container">
     <div class="masthead">
-      <h3 class="text-muted">Hello, {{ user }}</h3>
-          <ul class="nav nav-pills nav-justified">
-              <li role="presentation" id="home-li">
-                  <a href="#home" aria-controls="home" role="tab"
-                     data-toggle="tab" onclick="tab_change('home-li')">Home</a>
-              </li>
-              <li role="presentation" id="messages-li">
-                  <a href="#messages" aria-controls="settings" role="tab"
-                     data-toggle="tab" onclick="tab_change('messages-li')">
-                      Messages
-                      {% if stu_info|length > 0 %}
-                      <span class="badge">{{ stu_info|length }}</span>
-                      {% endif %}
-                  </a>
-              </li>
-              <li role="presentation" id="student-li">
-                  <a href="#student" aria-controls="student" role="tab"
-                     data-toggle="tab" onclick="tab_change('student-li')">Student</a>
-              </li>
-              <li role="presentation" id="settings-li">
-                  <a href="#settings" aria-controls="settings" role="tab"
-                     data-toggle="tab" onclick="tab_change('settings-li')">Settings</a>
-              </li>
-          </ul>
+{#        <h3 class="text-muted">Hello, Prof. {{ user }}</h3>#}
+        <h2 class="text-muted name-header">
+            Good morning, Prof. {{ user }}
+        </h2>
+        <ul class="nav nav-pills nav-justified">
+          <li role="presentation" id="home-li">
+              <a href="#home" aria-controls="home" role="tab"
+                 data-toggle="tab" onclick="tab_change('home-li')">Home</a>
+          </li>
+          <li role="presentation" id="messages-li">
+              <a href="#messages" aria-controls="settings" role="tab"
+                 data-toggle="tab" onclick="tab_change('messages-li')">
+                  Messages
+                  {% if stu_info|length > 0 %}
+                  <span class="badge">{{ stu_info|length }}</span>
+                  {% endif %}
+              </a>
+          </li>
+          <li role="presentation" id="student-li">
+              <a href="#student" aria-controls="student" role="tab"
+                 data-toggle="tab" onclick="tab_change('student-li')">Student</a>
+          </li>
+          <li role="presentation" id="settings-li">
+              <a href="#settings" aria-controls="settings" role="tab"
+                 data-toggle="tab" onclick="tab_change('settings-li')">Settings</a>
+          </li>
+        </ul>
     </div>
 
     <!-- Tab panes -->
@@ -122,8 +145,20 @@
         {% include "./home.html" %}
         {% include "./messages.html" with students=stu_info %}
         {% include "./student.html" with ac_students=ac_stu_info %}
-    <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
+        <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
     </div>
 </div>
+
+<!-- Site footer -->
+ <div id="footer" class = "footer navbar-fixed-bottom" style=" width: 100%; margin-top: 30px;">
+     <div class="footer-div" style="font-size: 12px;">
+         <br>
+         Copyright (c) 2014-2017 ShanghaiTech University All rights reserved
+         <br>
+         <small></small>
+         Developed By:He Xin & Ding Ruiyang, SIST@ShanghaiTech
+     </div>
+ </div>
+
 </body>
 {% endblock %}
