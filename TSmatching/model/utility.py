@@ -136,6 +136,9 @@ class TeacherHandle:
         elif not stu_select.third_rejected and\
                 stu_select.second.user_name == self.__name:
             stu_select.third_rejected = True
+
+        # if teacher reject a student who has been accepted
+        # We should increase his recruit number
         if action == 'reject_ac' and tea_obj.recruit_number < 2:
             tea_obj.recruit_number = tea_obj.recruit_number + 1
 

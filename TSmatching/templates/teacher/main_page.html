@@ -19,8 +19,19 @@
 {% block style %}
     <style>
         body {
-            background: url({% static '/resource/img/backgroud_2.jpg' %});
+            background-image: url({% static '/resource/img/backgroud_2.jpg' %});
         }
+
+        .logout-button {
+            margin: 30px auto 30px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+        .logout-button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
         .nav.nav-pills > li > a:hover,
         .nav-pills > li.active > a:hover {
             background-color: rgba(0, 1, 0, 0.2);
@@ -112,9 +123,19 @@
 <div class="container">
     <div class="masthead">
 {#        <h3 class="text-muted">Hello, Prof. {{ user }}</h3>#}
-        <h2 class="text-muted name-header">
-            Good morning, Prof. {{ user }}
-        </h2>
+        <div class="container">
+            <div class="col-md-10">
+                <h2 class="text-muted name-header">
+                    Good morning, Prof. {{ user }}
+                </h2>
+            </div>
+            <div class="col-md-2">
+                <a href="{% url 'tea_login_page' %}" target="_self"
+                    class="btn btn-lg logout-button">
+                    Logout
+                </a>
+            </div>
+        </div>
         <ul class="nav nav-pills nav-justified">
           <li role="presentation" id="home-li">
               <a href="#home" aria-controls="home" role="tab"
