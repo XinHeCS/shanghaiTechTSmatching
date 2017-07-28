@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/teacher/messages.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/messages.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TSmatching/templates/teacher/student.html" afterPath="$PROJECT_DIR$/TSmatching/templates/teacher/student.html" />
-    </list>
+    <list default="true" id="66456aab-8889-4279-b18a-f03cc9fb364d" name="Default" comment="Merge remote-tracking branch 'upstream/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;student/templates/students/stu_login.html&#10;#&#9;student/views.py" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -189,8 +185,8 @@
         <option value="$PROJECT_DIR$/TSmatching/model/forms.py" />
         <option value="$PROJECT_DIR$/TSmatching/templates/teacher/main_page.html" />
         <option value="$PROJECT_DIR$/TSmatching/templates/teacher/login.html" />
-        <option value="$PROJECT_DIR$/TSmatching/templates/teacher/messages.html" />
         <option value="$PROJECT_DIR$/TSmatching/templates/teacher/student.html" />
+        <option value="$PROJECT_DIR$/TSmatching/templates/teacher/messages.html" />
       </list>
     </option>
   </component>
