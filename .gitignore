@@ -6,6 +6,7 @@ static/attachment/*.jpg
 static/attachment/*.png
 static/attachment/*.html
 TSmatching/migrations/
+static/resource/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -81,3 +82,5 @@ ENV/
 
 # mypy
 .mypy_cache/
+将删除 static/resource/attachment/
+将删除 static/resource/photo/gamersky_01origin_01_20177222115123.jpg

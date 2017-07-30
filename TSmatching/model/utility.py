@@ -33,12 +33,17 @@ class TeacherHandle:
 
         return {
             'name': stu_info_obj.name,
+            'id': stu_info_obj.resident_id,
             'school': stu_info_obj.university,
+            'major': stu_info_obj.major,
             'GPA': stu_info_obj.gpa,
+            'ranking': stu_info_obj.ranking,
             'phone_number': stu_info_obj.phone_number,
-            'we_chat': stu_info_obj.email,
+            'email': stu_info_obj.email,
             'description': stu_info_obj.comment,
-            'photo': stu_info_obj.photo
+            'photo': stu_info_obj.photo,
+            'birthday': stu_info_obj.date_of_birth,
+            'attachment': stu_info_obj.attachment
         }
 
     # Get student object
