@@ -122,7 +122,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-MEDIA_ROOT = "/Users/dingruiyang/Projects/shanghaiTechTSmatching/static"
+MEDIA_ROOT = os.path.join(BASE_DIR, "static")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
