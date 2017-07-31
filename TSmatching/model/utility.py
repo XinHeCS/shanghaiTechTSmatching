@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw, ImageFont, Image
+from PIL import ImageDraw, ImageFont, ImageFilter, Image
 import random
 from .models import Students, Teachers, Selection
 
@@ -169,7 +169,7 @@ class Captcha:
         return (random.randint(32, 127), random.randint(32, 127), random.randint(32, 127))
 
     def captcha_generation(self):
-        font = ImageFont.truetype('UbuntuMono-BI.ttf', 36)
+        font = ImageFont.truetype('C:\Windows\Fonts\Arial.ttf', 36)
         draw = ImageDraw.Draw(self.image)
         for x in range(self.__width):
             for y in range(self.__height):
@@ -179,7 +179,7 @@ class Captcha:
             draw.text((50 * t + 10, 10),self.chars[t], font=font, fill=self.rndColor2())
         return self.chars
     def get_img(self):
-        image = self.image.filter(Image.BLUR)
+        image = self.image.filter(ImageFilter.BLUR)
         return image
 
 class NullDefault:
