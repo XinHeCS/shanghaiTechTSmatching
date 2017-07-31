@@ -90,9 +90,10 @@ class EditForm(forms.Form):
                                       'placeholder':'专业排名百分比'
                                   }))
     stu_comment = forms.CharField(label='备注（可选）', required=False,
-                                    widget=forms.TextInput(attrs={
-                                      'class':'form-control',
-                                      'placeholder':'如有其他信息请备注'
+                                    widget=forms.Textarea(attrs={
+                                        'class':'form-control',
+                                        'style':'width: 500px; height: 200px',
+                                        'placeholder':'请完成个人描述（200字以内）'
                                   }))
     stu_attachment = forms.FileField(required=False)
     stu_pic = forms.FileField()

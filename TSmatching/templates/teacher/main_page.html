@@ -19,8 +19,19 @@
 {% block style %}
     <style>
         body {
-            background: url({% static '/resource/img/backgroud_2.jpg' %});
+            background-image: url({% static '/img/backgroud_2.jpg' %});
         }
+
+        .logout-button {
+            margin: 30px auto 30px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+        .logout-button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
         .nav.nav-pills > li > a:hover,
         .nav-pills > li.active > a:hover {
             background-color: rgba(0, 1, 0, 0.2);
@@ -36,7 +47,9 @@
             color: white;
         }
         .footer{
+            width: 100%;
             height: 70px;
+            margin-top: 50px;
             background-color: rgba(0, 0, 0, 0.5);
             text-align: center;
             color: white;
@@ -112,9 +125,19 @@
 <div class="container">
     <div class="masthead">
 {#        <h3 class="text-muted">Hello, Prof. {{ user }}</h3>#}
-        <h2 class="text-muted name-header">
-            Good morning, Prof. {{ user }}
-        </h2>
+        <div class="container">
+            <div class="col-md-10">
+                <h2 class="text-muted name-header">
+                    Good morning, Prof. {{ user }}
+                </h2>
+            </div>
+            <div class="col-md-2">
+                <a href="{% url 'tea_login_page' %}" target="_self"
+                    class="btn btn-lg logout-button">
+                    Logout
+                </a>
+            </div>
+        </div>
         <ul class="nav nav-pills nav-justified">
           <li role="presentation" id="home-li">
               <a href="#home" aria-controls="home" role="tab"
@@ -148,9 +171,12 @@
         <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
     </div>
 </div>
+<br>
+<br>
+<br>
 
 <!-- Site footer -->
- <div id="footer" class = "footer navbar-fixed-bottom" style=" width: 100%; margin-top: 30px;">
+ <div id="footer" class = "footer navbar-fixed-bottom" >
      <div class="footer-div" style="font-size: 12px;">
          <br>
          Copyright (c) 2014-2017 ShanghaiTech University All rights reserved
@@ -159,6 +185,5 @@
          Developed By:He Xin & Ding Ruiyang, SIST@ShanghaiTech
      </div>
  </div>
-
 </body>
 {% endblock %}

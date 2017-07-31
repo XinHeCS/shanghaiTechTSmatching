@@ -89,8 +89,8 @@ class Students(models.Model):
     comment = models.TextField(default="")
     # True if this student has been accepted
     accepted = models.IntegerField(default=0)
-    attachment = models.FileField(upload_to = './attachment', null=True)
-    photo = models.ImageField(upload_to='./img', null=True)
+    attachment = models.FileField(upload_to = './resource/attachment', null=True)
+    photo = models.ImageField(upload_to='./resource/photo', null=True)
 
     def __str__(self):
         return self.user_name

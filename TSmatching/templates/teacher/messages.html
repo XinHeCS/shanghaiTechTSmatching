@@ -49,16 +49,30 @@
                                     <img src="{% static student.photo %}" width="200" height="260"
                                          alt="Photo Not Found" class="img-rounded">
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-5">
                                     <dl class="dl-horizontal">
                                         <dt><h3>School:</h3></dt>
                                         <dd><h3><small>{{ student.school }}</small></h3></dd>
+                                        <dt><h3>Major:</h3></dt>
+                                        <dd><h3><small>{{ student.major }}</small></h3></dd>
                                         <dt><h3>GPA:</h3></dt>
                                         <dd><h3><small>{{ student.GPA }}</small></h3></dd>
+                                        <dt><h3>Rank:</h3></dt>
+                                        <dd><h3><small>{{ student.ranking }}</small></h3></dd>
+                                        <dt><h3>CV:</h3></dt>
+                                        <dd><h3><small>{{ student.attachment }}</small></h3></dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-5">
+                                    <dl class="dl-horizontal">
+                                        <dt><h3>ID:</h3></dt>
+                                        <dd><h3><small>{{ student.id }}</small></h3></dd>
                                         <dt><h3>Tel:</h3></dt>
                                         <dd><h3><small>{{ student.phone_number }}</small></h3></dd>
-                                        <dt><h3>We Chat:</h3></dt>
-                                        <dd><h3><small>{{ student.we_chat }}</small></h3></dd>
+                                        <dt><h3>Email:</h3></dt>
+                                        <dd><h3><small>{{ student.email }}</small></h3></dd>
+                                        <dt><h3>Birthday:</h3></dt>
+                                        <dd><h3><small>{{ student.birthday }}</small></h3></dd>
                                     </dl>
                                 </div>
                                 <div class="row">
@@ -106,16 +120,30 @@
                                     <img src="{% static student.photo %}" width="200" height="260"
                                          alt="Photo Not Found" class="img-rounded">
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-5">
                                     <dl class="dl-horizontal">
                                         <dt><h3>School:</h3></dt>
                                         <dd><h3><small>{{ student.school }}</small></h3></dd>
+                                        <dt><h3>Major:</h3></dt>
+                                        <dd><h3><small>{{ student.major }}</small></h3></dd>
                                         <dt><h3>GPA:</h3></dt>
                                         <dd><h3><small>{{ student.GPA }}</small></h3></dd>
+                                        <dt><h3>Rank:</h3></dt>
+                                        <dd><h3><small>{{ student.ranking }}</small></h3></dd>
+                                        <dt><h3>CV:</h3></dt>
+                                        <dd><h3><small>{{ student.attachment }}</small></h3></dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-5">
+                                    <dl class="dl-horizontal">
+                                        <dt><h3>ID:</h3></dt>
+                                        <dd><h3><small>{{ student.id }}</small></h3></dd>
                                         <dt><h3>Tel:</h3></dt>
                                         <dd><h3><small>{{ student.phone_number }}</small></h3></dd>
-                                        <dt><h3>We Chat:</h3></dt>
-                                        <dd><h3><small>{{ student.we_chat }}</small></h3></dd>
+                                        <dt><h3>Email:</h3></dt>
+                                        <dd><h3><small>{{ student.email }}</small></h3></dd>
+                                        <dt><h3>Birthday:</h3></dt>
+                                        <dd><h3><small>{{ student.birthday }}</small></h3></dd>
                                     </dl>
                                 </div>
                                 <div class="row">
@@ -154,7 +182,7 @@
         <div class="panel panel-box tab-card">
             <!-- Default panel contents -->
             <div class="panel-heading tab-card">
-                Selecting your favorite students
+                <h4>Selecting your favorite students</h4>
             </div>
             <div class="panel-body">
                 <p>
