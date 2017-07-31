@@ -113,12 +113,12 @@ def select_teacher(request):
     # t.save_spider_data()
     err = ""
     t_list = Teachers.objects.all()
-    if Selection.objects.filter(student_id=request.user.username).count() == 0:
-        Selection.objects.create(student_id=request.user.username)
+    # if Selection.objects.filter(student_id=request.user.username).count() == 0:
+    #     Selection.objects.create(student_id=request.user.username)
     # show current selection
-    stu_selection = Selection.objects.get(student_id=request.user.username)
     # in case of first login
     try:
+        stu_selection = Selection.objects.get(student_id=request.user.username)
         s1 = Teachers.objects.get(id=stu_selection.first_id).name
         s2 = Teachers.objects.get(id=stu_selection.second_id).name
         s3 = Teachers.objects.get(id=stu_selection.third_id).name

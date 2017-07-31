@@ -90,11 +90,11 @@
 
 {% block content %}
 
-<body style="background-image: url({% static '/resource/img/backgroud_2.jpg' %})">
+<body style="background-image: url({% static 'img/backgroud_2.jpg' %})">
 <div class="container">
     <div>
-        <img src="{% static '/resource/img/STU.jpg' %}" alt="校徽"
-        height="20%" width="20%">
+        <img src="{% static '/img/STU.jpg' %}" alt="校徽"
+             height="20%" width="20%">
     </div>
     <h2 class="signin-heading">Please sign in</h2>
     <form class="form-signin" method="post">
@@ -109,7 +109,8 @@
                 <span aria-hidden="true">&times;
                 </span>
             </button>
-            <strong>Sorry!</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wrong user or password
+            <strong>Sorry!</strong><br>
+            Wrong user or wrong password
         </div>
         {% endif %}
     </form>
