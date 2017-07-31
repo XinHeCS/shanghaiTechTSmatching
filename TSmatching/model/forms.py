@@ -47,6 +47,23 @@ class PasswordChangeForm(forms.Form):
         'placeholder': 'Repeat your password'
     }))
 
+class TeacherChangePwdForm(forms.Form):
+    original_pwd = forms.CharField(label='Your original password:',
+                                   widget=forms.PasswordInput(attrs={
+                                       'class' : 'form-control input-box',
+                                       'placeholder' : 'Enter your original password'
+                                   }))
+    new_pwd = forms.CharField(label='New password:',
+                              widget=forms.PasswordInput(attrs={
+                                  'class' : 'form-control input-box',
+                                  'placeholder' : 'Enter your new password'
+                              }))
+    confirm_pwd = forms.CharField(label="Confirm new password:",
+                                  widget=forms.PasswordInput(attrs={
+                                      'class': 'form-control input-box',
+                                      'placeholder': 'Confirm your new password'
+                                  }))
+
 class EditForm(forms.Form):
     stu_name = forms.CharField(label='姓名:', max_length='20', required=True, strip=True,
     widget = forms.TextInput(attrs={

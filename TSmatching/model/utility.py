@@ -1,6 +1,8 @@
 from PIL import ImageDraw, ImageFont, ImageFilter, Image
-import random
 from .models import Students, Teachers, Selection
+from .forms import TeacherChangePwdForm
+import random
+
 
 # This class is used for checking the teacher users
 # update the data of teacher in the database
@@ -15,6 +17,8 @@ class TeacherHandle:
                 self.__password = result.password
                 self.__id = result.id
                 self.__can_login = self.__password == pwd
+                self.__password_form = TeacherChangePwdForm()
+                # self.__can_change_password = False
         except Teachers.DoesNotExist:
             self.__can_login = False
 
@@ -24,6 +28,37 @@ class TeacherHandle:
     # check the pwd of a teacher
     def can_login(self):
         return self.__can_login
+
+    # Switch the status of can_change_password
+    # This method will try to change the user's password and
+    # return a tuple, it's first element means
+    # success or fail to change password and
+    # it's second element represents the detail message
+    def try_change_password(self, request_form):
+        # self.__can_change_password = True
+        self.__password_form = TeacherChangePwdForm(request_form)
+
+        if self.__password_form.is_valid():
+            ori_pwd = self.__password_form.cleaned_data['original_pwd']
+            new_pwd = self.__password_form.cleaned_data['new_pwd']
+            con_pwd = self.__password_form.cleaned_data['confirm_pwd']
+
+            if not con_pwd == new_pwd:
+                return [False, 'Please enter the same confirm password']
+            else:
+                if not ori_pwd == self.__password:
+                    return [True, 'Your original password is not correct']
+                else:
+                    # Update the new pass word
+                    self.__password = new_pwd
+                    # Update the database
+                    Teachers.objects.filter(user_name=self.__name).update(password=new_pwd)
+
+                    return [True, "Successed to change your password"]
+        else:
+            return [False, 'Failed to change your password']
+
+
 
     # Get information of the student
     @staticmethod
@@ -97,6 +132,10 @@ class TeacherHandle:
             ret.append(TeacherHandle.get_student_info(stu.user_name))
 
         return ret
+
+    # Return the change password form
+    def get_password_form(self):
+        return self.__password_form
 
     # Accept the student:stu
     def accept(self, stu):
