@@ -1,5 +1,4 @@
-
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, Image
 import random
 from .models import Students, Teachers, Selection
 
@@ -175,7 +174,7 @@ class Captcha:
             draw.text((50 * t + 10, 10),self.chars[t], font=font, fill=self.rndColor2())
         return self.chars
     def get_img(self):
-        image = self.image.filter(ImageFilter.BLUR)
+        image = self.image.filter(Image.BLUR)
         return image
 
 class NullDefault:
