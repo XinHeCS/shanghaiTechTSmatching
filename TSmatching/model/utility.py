@@ -169,7 +169,7 @@ class Captcha:
         return (random.randint(32, 127), random.randint(32, 127), random.randint(32, 127))
 
     def captcha_generation(self):
-        font = ImageFont.truetype('C:\Windows\Fonts\Arial.ttf', 36)
+        font = ImageFont.truetype('Arial.ttf', 36)
         draw = ImageDraw.Draw(self.image)
         for x in range(self.__width):
             for y in range(self.__height):
