@@ -14,10 +14,11 @@
 {% block style %}
 <style>
     body {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        background-color: #eee;
-        background-image: url({% static 'img/backgroud_2.jpg' %})
+        background: url({% static 'img/background_4.jpg' %});
+        background-attachment:fixed;
+        background-size: cover;
+        -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */
+        -o-background-size: cover;/* 兼容Opera */
     }
 
     .container {

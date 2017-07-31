@@ -19,7 +19,12 @@
 {% block style %}
     <style>
         body {
-            background-image: url({% static '/img/backgroud_2.jpg' %});
+            background: url({% static 'img/background_2.jpg' %});
+            background-attachment:fixed;
+{#            background-repeat: no-repeat;#}
+            background-size: cover;
+            -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */
+            -o-background-size: cover;/* 兼容Opera */
         }
 
         .logout-button {
