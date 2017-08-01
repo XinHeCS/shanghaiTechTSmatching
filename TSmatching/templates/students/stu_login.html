@@ -1,16 +1,17 @@
 {% extends 'students/base.html' %}
-
+{% load staticfiles %}
 {% block style %}
 <style>
-    body {
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #eee;
+    body{
+        background: url({% static 'img/login_bg.jpg' %});
+        background-attachment:fixed;
+        background-size: cover;
+
     }
 
     .container {
         text-align: center;
-        margin-top: auto;
+        margin-top: 0px;
     }
 
     .form-signin {
@@ -50,6 +51,11 @@
 {% endblock %}
 
 {% block content %}
+    <body style="background: url({% static 'img/login_bg.jpg' %});
+        background-attachment:fixed;
+        background-size: cover;
+
+            ">
      <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
       <div class="container">
         <div class="navbar-header" >
@@ -70,14 +76,12 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="page-header" style="height: auto; margin-top: 90px">
       <div class="container">
-          <img src="../../../static/img/STU.jpg" class==img-responsive" style="width: 15%">
+          <img src='../../../static/img/STULighter.png' class=img-responsive" style="width: 15%; margin-top: 10%">
 
       </div>
-    </div>
 <div class="container">
-    <h2 class="form-signin-heading" style="font-family:'Arial Hebrew'">Please Login</h2>
+    <h2 class="form-signin-heading" style="font-family:'Arial Hebrew';color:  white">Please Login</h2>
     <form class="form-signin" method="post">
         <!--<label for="inputEmail" class="sr-only">Email address</label>-->
         <!--<input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
@@ -86,16 +90,14 @@
         {% csrf_token %}
         {% for field in form %}
 
-                <label class="sr-only" for="{{ field.name }}">{{ field.label }}</label>
+                <label class="sr-only" style="color: whitesmoke" for="{{ field.name }}">{{ field.label }}</label>
 
             <div>{{ field }}</div>
 
         {% endfor %}
 
         <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
@@ -114,13 +116,16 @@
         {% endif %}
 
 </div>
-         <div id="footer" class = "footer navbar-fixed-bottom" style=" width: 100%; margin-top: 30px;">
+    </body>
+         <div id="footer" class = "footer navbar-fixed-bottom" style=" width: 100%; margin-top: 30px;height: 100px">
          <div class="footer-div" style="font-size: 12px;">
              <br>
              Copyright (c) 2014-2017 ShanghaiTech University All rights reserved
              <br>
              <small></small>
-             Developed By:He Xin & Ding Ruiyang, SIST@ShanghaiTech
+             Developed By:He Xin & Ding Ruiyang, SIST@ShanghaiTech<br>
+             Background Picture By:Liu Xuhui@无人机计算实验室
+
          </div>
      </div>
 {% endblock %}}
