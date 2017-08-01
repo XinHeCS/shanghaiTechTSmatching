@@ -19,7 +19,12 @@
 {% block style %}
     <style>
         body {
-            background-image: url({% static '/img/backgroud_2.jpg' %});
+            background: url({% static 'img/background_2.jpg' %});
+            background-attachment:fixed;
+{#            background-repeat: no-repeat;#}
+            background-size: cover;
+            -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */
+            -o-background-size: cover;/* 兼容Opera */
         }
 
         .logout-button {
@@ -165,10 +170,10 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-        {% include "./home.html" %}
-        {% include "./messages.html" with students=stu_info %}
-        {% include "./student.html" with ac_students=ac_stu_info %}
-        <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
+        {% include "teacher/home.html" %}
+        {% include "teacher/messages.html" with students=stu_info %}
+        {% include "teacher/student.html" with ac_students=ac_stu_info %}
+        {% include "teacher/settings.html" with change_pwd=change_password %}
     </div>
 </div>
 <br>

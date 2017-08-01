@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .model.forms import LoginForm
+from .model.forms import LoginForm, TeacherChangePwdForm
 from .model.utility import TeacherHandle
 
 tea_hdl = None
@@ -33,6 +33,24 @@ def login(request):
             'success_login': True
         })
 
+def main_page(request):
+    global tea_hdl
+    # Check for change password request
+    change_pwd_box = {
+        'form': tea_hdl.get_password_form(),
+        "status": True,
+        'err': ''
+    }
+    if request.method == 'POST':
+        change_pwd_box['status'], change_pwd_box['err'] = \
+            tea_hdl.try_change_password(request.POST)
+    return render(request, 'teacher/main_page.html', {
+        'user': tea_hdl.__str__(),
+        'stu_info': tea_hdl.get_students(),
+        'ac_stu_info': tea_hdl.get_accepted_students(),
+        'change_password': change_pwd_box
+    })
+
 def message_page(request, action, stu):
     global tea_hdl
 
@@ -47,9 +65,21 @@ def message_page(request, action, stu):
         tea_hdl.reject(stu, action)
         return redirect('/teacher/main_page')
 
-def main_page(request):
-    return render(request, 'teacher/main_page.html', {
-        'user': tea_hdl.__str__(),
-        'stu_info': tea_hdl.get_students(),
-        'ac_stu_info': tea_hdl.get_accepted_students()
-    })
+# Change user's password
+# This method will check the original password and
+# change a new password for the user
+# def change_password(request):
+#     global tea_hdl
+#
+#     # Check login status
+#     if not tea_hdl.can_login():
+#         return redirect('tea_login_page')
+#
+#     # Deal with POST request
+#     if request.method == 'POST':
+#         status, mess = tea_hdl.try_change_password(request.POST)
+#
+#     # if not POST request
+#     # load the page directly
+#     else:
+#         return redirect('tea_main_page')

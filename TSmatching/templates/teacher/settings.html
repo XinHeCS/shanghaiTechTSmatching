@@ -1,0 +1,94 @@
+{% extends 'teacher/base.html' %}
+
+{% block style %}
+    <style>
+        .alert-box {
+            margin: 15px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .form-signin {
+          max-width: 330px;
+          padding: 15px;
+          margin: 0 auto;
+        }
+        .form-signin,
+        .form-signin {
+            text-align: center;
+        }
+        .form-signin {
+          font-weight: normal;
+        }
+        .form-signin {
+          position: relative;
+          height: auto;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          padding: 10px;
+          font-size: 16px;
+        }
+        .form-signin:focus {
+          z-index: 2;
+        }
+        .form-signin input[type="text"] {
+          margin-bottom: -1px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+          margin-bottom: 0px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+
+        .signin-heading {
+            color: white;
+        }
+
+        .btn-submit {
+            margin: 20px auto;
+        }
+
+        .input-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            border: 0px;
+            height: 50px;
+        }
+
+        .change-form {
+            margin-top: 10%;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+<div role="tabpanel" class="tab-pane fade" id="settings">
+    <div class="container change-form">
+{#        <div>#}
+{#            <img src="{% static '/img/STU.jpg' %}" alt="校徽"#}
+{#                 height="20%" width="20%">#}
+{#        </div>#}
+        <h2 class="signin-heading text-center">Change password</h2>
+        <form class="form-signin" method="post">
+            {% csrf_token %}
+            {% for field in change_pwd.form %}
+                {{ field }}
+            {% endfor %}
+            <button class="btn btn-lg btn-success btn-submit btn-block">Sign in</button>
+        </form>
+    </div>
+
+    {% if not change_pwd.status or change_pwd.err|length > 0 %}
+    <div class="alert alert-danger alert-dismissible alert-box" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;
+            </span>
+        </button>
+        <p>{{ change_pwd.err }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

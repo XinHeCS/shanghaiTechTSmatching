@@ -14,18 +14,23 @@
 {% block style %}
 <style>
     body {
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #eee;
+        background: url({% static 'img/background_4.jpg' %});
+        background-attachment:fixed;
+        background-size: cover;
+        -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */
+        -o-background-size: cover;/* 兼容Opera */
     }
 
     .container {
         text-align: center;
-        margin: 10% auto;
+{#        margin: 10% auto;#}
+        margin-top: 10%;
     }
 
     .alert-box {
-        margin-top: 15px;
+        margin: 0px auto;
+        max-width: 500px;
+        text-align: center;
     }
 
     .form-signin {
@@ -90,7 +95,7 @@
 
 {% block content %}
 
-<body style="background-image: url({% static 'img/backgroud_2.jpg' %})">
+<body>
 <div class="container">
     <div>
         <img src="{% static '/img/STU.jpg' %}" alt="校徽"
@@ -103,18 +108,19 @@
             {{ field }}
         {% endfor %}
         <button class="btn btn-lg btn-success btn-submit btn-block" type="submit">Sign in</button>
-        {% if not success_login %}
-        <div class="alert alert-danger alert-dismissible alert-box" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;
-                </span>
-            </button>
-            <strong>Sorry!</strong><br>
-            Wrong user or wrong password
-        </div>
-        {% endif %}
     </form>
 </div>
+
+{% if not success_login %}
+<div class="alert alert-danger alert-dismissible alert-box" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;
+        </span>
+    </button>
+    <strong>Sorry!</strong><br>
+    Wrong user or wrong password
+</div>
+{% endif %}
 
 <!-- Site footer -->
 <div id="footer" class = "footer navbar-fixed-bottom" style=" width: 100%; margin-top: 30px;">
