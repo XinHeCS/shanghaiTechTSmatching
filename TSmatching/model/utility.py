@@ -2,6 +2,7 @@ from PIL import ImageDraw, ImageFont, ImageFilter, Image
 from .models import Students, Teachers, Selection
 from .forms import TeacherChangePwdForm
 import random
+import os
 
 
 # This class is used for checking the teacher users
@@ -225,3 +226,26 @@ class NullDefault:
     def cleaned_data_not_null(self, label, current_form):
         if current_form.cleaned_data[label] is None:
             pass
+
+class FileUploadHdl:
+    def __init__(self, img, attachment, db):
+        self.img = img
+        self.attachment = attachment
+        self.db = db
+    def clear_original(self):
+        path = os.path.abspath('.')+'/static/'
+        try:
+            os.remove(path+str(self.db.photo))
+            print('deleted photo')
+        except:
+            print('No photo will be deleted due to the first upload')
+        try:
+            os.remove(path+str(self.db.attachment))
+            print('deleted attachment')
+        except:
+            print('No file will be deleted due to the first upload')
+    def save(self):
+        self.clear_original()
+        self.db.attachment = self.attachment
+        self.db.photo = self.img
+        self.db.save()

@@ -8,7 +8,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from .model.forms import RegisterForm, LoginForm, EditForm, PasswordChangeForm
 from .model.models import Students, Teachers, Selection
-from .model.utility import Captcha
+from .model.utility import Captcha, FileUploadHdl
 from django.views.generic.edit import UpdateView
 import io
 # Log student in.
@@ -86,9 +86,8 @@ def stu_edit(request):
         form.encoding = 'utf-8'
         print(form.is_valid())
         if form.is_valid():
-
+            uploader = FileUploadHdl(form.cleaned_data['stu_pic'],  form.cleaned_data['stu_attachment'],stu)
             stu.resident_id = form.cleaned_data['stu_id']
-            print(form.cleaned_data['stu_id'])
             stu.name = form.cleaned_data['stu_name']
             stu.date_of_birth = form.cleaned_data['stu_birth']
             stu.email = form.cleaned_data['stu_email']
@@ -98,10 +97,9 @@ def stu_edit(request):
             stu.gpa = form.cleaned_data['stu_gpa']
             stu.ranking = form.cleaned_data['stu_ranking']
             stu.comment = form.cleaned_data['stu_comment']
-            stu.attachment = form.cleaned_data['stu_attachment']
             stu.sex = form.cleaned_data['stu_sex']
-            stu.photo = form.cleaned_data['stu_pic']
             stu.save()
+            uploader.save()
             return render(request, 'students/stu_edit.html', {'form': form, 'info': "个人信息已修改"})
     return render(request, 'students/stu_edit.html', {'form':form})
 
