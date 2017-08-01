@@ -1,12 +1,31 @@
 from django.shortcuts import render, redirect
-from .model.forms import LoginForm, TeacherChangePwdForm
+from .model.forms import LoginForm
 from .model.utility import TeacherHandle
+from .model.models import Teachers
 
-tea_hdl = None
+# A decorator
+# Check for login status
+def login_checked(func):
+    def wrapper(request, *args, **kw):
+        try:
+            print('User: ' + request.session['user_id'] + '   request login ...')
+            return func(request, *args, **kw)
+        except KeyError:
+            return redirect('tea_login_page')
+    return wrapper
+
+# Check user's password
+def do_login(user, pwd):
+    result = Teachers.objects.get(user_name=user)
+    if pwd == result.password:
+        return True
+    else:
+        return False
 
 # Create your views here.
 def login(request):
-    global tea_hdl
+    # Clear the session
+    request.session.clear()
 
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -15,11 +34,13 @@ def login(request):
         if form.is_valid():
             user_name = form.cleaned_data['user_name']
             user_pwd = form.cleaned_data['user_pwd']
-            tea_hdl = TeacherHandle(user_name, user_pwd)
+
+            # Save user ID session
+            request.session['user_id'] = user_name
 
             # check the login info
             # if failed, jump to the register page
-            if tea_hdl.can_login():
+            if do_login(user_name, user_pwd):
                 return redirect('/teacher/main_page')
             else:
                 return render(request, 'teacher/login.html', {
@@ -33,8 +54,9 @@ def login(request):
             'success_login': True
         })
 
+@login_checked
 def main_page(request):
-    global tea_hdl
+    tea_hdl = TeacherHandle(request.session['user_id'])
     # Check for change password request
     change_pwd_box = {
         'form': tea_hdl.get_password_form(),
@@ -51,11 +73,9 @@ def main_page(request):
         'change_password': change_pwd_box
     })
 
+@login_checked
 def message_page(request, action, stu):
-    global tea_hdl
-
-    if not tea_hdl.can_login():
-        return redirect('tea_login_page')
+    tea_hdl = TeacherHandle(request.session['user_id'])
 
     # check actions
     if action == 'accept':
@@ -64,6 +84,13 @@ def message_page(request, action, stu):
     else:
         tea_hdl.reject(stu, action)
         return redirect('/teacher/main_page')
+
+@login_checked
+def logout(request):
+    request.session.clear()
+
+    return redirect('tea_login_page')
+
 
 # Change user's password
 # This method will check the original password and
