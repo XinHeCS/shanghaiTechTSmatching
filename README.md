@@ -25,9 +25,9 @@ To be completed...
 
 > Students or teachers can send messages to each other
 
-* for some other functions you want to add in ...
+* For some other functions you want to add in ...
 
-> Watch and launch an issue and let us know 
+> Star our projects and launch an issue to let us know
 
 ## Developer
 
