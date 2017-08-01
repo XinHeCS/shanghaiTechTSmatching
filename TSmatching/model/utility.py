@@ -227,12 +227,15 @@ class NullDefault:
         if current_form.cleaned_data[label] is None:
             pass
 
+#This class is for updating the uploaded file in sever.
+# When new file uploaded, delete previous file and replace
+# it with new file
 class FileUploadHdl:
     def __init__(self, img, attachment, db):
         self.img = img
         self.attachment = attachment
         self.db = db
-    def clear_original(self):
+    def __clear_original(self):
         path = os.path.abspath('.')+'/static/'
         try:
             os.remove(path+str(self.db.photo))
@@ -245,7 +248,7 @@ class FileUploadHdl:
         except:
             print('No file will be deleted due to the first upload')
     def save(self):
-        self.clear_original()
+        self.__clear_original()
         self.db.attachment = self.attachment
         self.db.photo = self.img
         self.db.save()
