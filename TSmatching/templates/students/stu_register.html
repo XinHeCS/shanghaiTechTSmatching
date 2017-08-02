@@ -1,5 +1,5 @@
 {% extends 'students/base.html' %}
-
+{% load staticfiles %}
 {% block style %}
 <style>
     body {
@@ -13,6 +13,7 @@
       padding: 15px;
       margin: 0 auto;
         margin-top: 100px;
+        color: whitesmoke;
     }
     .form-signin .form-signin-heading,
     .form-signin .checkbox {
@@ -53,6 +54,11 @@
      </script>
 {% endblock %}
 {% block content %}
+        <body style="background: url({% static 'img/tower.jpg' %});
+        background-attachment:fixed;
+        background-size: cover;
+
+            ">
          <nav class="navbar-default navbar-fixed-top" style="background-color: #9D0711">
       <div class="container">
         <div class="navbar-header" >
@@ -99,4 +105,6 @@
 </div>
 {% endif %}
 </div>
+        </body>
+
 {% endblock %}
