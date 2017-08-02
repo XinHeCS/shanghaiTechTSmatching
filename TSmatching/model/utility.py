@@ -4,31 +4,21 @@ from .forms import TeacherChangePwdForm
 import random
 import os
 
-
 # This class is used for checking the teacher users
 # update the data of teacher in the database
 class TeacherHandle:
-    def __init__(self, name, pwd=''):
-        try:
-            result = Teachers.objects.get(user_name=name)
-            if not result:
-                self.__can_login = False
-            else:
-                self.__name = result.user_name
-                self.__password = result.password
-                self.__id = result.id
-                self.__can_login = self.__password == pwd
-                self.__password_form = TeacherChangePwdForm()
-                # self.__can_change_password = False
-        except Teachers.DoesNotExist:
+    def __init__(self, name):
+        result = Teachers.objects.get(user_name=name)
+        if not result:
             self.__can_login = False
+        else:
+            self.__name = result.user_name
+            self.__id = result.id
+            self.__password = result.password
+            self.__password_form = TeacherChangePwdForm()
 
     def __str__(self):
         return self.__name
-
-    # check the pwd of a teacher
-    def can_login(self):
-        return self.__can_login
 
     # Switch the status of can_change_password
     # This method will try to change the user's password and

@@ -12,18 +12,30 @@ To be completed...
 
 To be completed...
 
-## License & Copyright
+## Future work
+* User login restrict
 
-Copyright (c) 2016-2017 ShanghaiTech University All rights reserved
+> User can only login in one place and the system will check for it.
 
-The work is under a [MIT License](https://opensource.org/licenses/MIT)
+* Accepted information for student
+
+> Tell students that he or she has been accepted
+
+* Message module between teachers and student
+
+> Students or teachers can send messages to each other
+
+* For some other functions you want to add in ...
+
+> Star our projects and launch an issue to let us know
 
 ## Developer
 
 * [He Xin](https://github.com/XinHeCS)
 * [Ding Ruiyang](https://github.com/JohnDing1995)
 
-## Bugs to solve
-表格验证与数据库不匹配
-## To Do
-优化信息编辑模块
+## License & Copyright
+
+Copyright (c) 2016-2017 ShanghaiTech University All rights reserved
+
+The work is under [MIT License](https://opensource.org/licenses/MIT)
