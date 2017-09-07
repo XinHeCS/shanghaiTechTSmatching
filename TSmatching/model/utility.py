@@ -227,18 +227,22 @@ class FileUploadHdl:
         self.db = db
     def __clear_original(self):
         path = os.path.abspath('.')+'/static/'
-        try:
-            os.remove(path+str(self.db.photo))
-            print('deleted photo')
-        except:
-            print('No photo will be deleted due to the first upload')
-        try:
-            os.remove(path+str(self.db.attachment))
-            print('deleted attachment')
-        except:
-            print('No file will be deleted due to the first upload')
+        if self.img is not None:
+            try:
+                os.remove(path+str(self.db.photo))
+                print('deleted photo')
+            except:
+                print('No photo will be deleted due to the first upload')
+        if self.attachment is not None:
+            try:
+                os.remove(path+str(self.db.attachment))
+                print('deleted attachment')
+            except:
+                print('No file will be deleted due to the first upload')
     def save(self):
         self.__clear_original()
-        self.db.attachment = self.attachment
-        self.db.photo = self.img
+        if self.attachment is not None:
+            self.db.attachment = self.attachment
+        if self.img is not None:
+            self.db.photo = self.img
         self.db.save()

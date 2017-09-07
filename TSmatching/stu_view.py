@@ -85,6 +85,7 @@ def stu_edit(request):
         form.encoding = 'utf-8'
         print(form.is_valid())
         if form.is_valid():
+
             uploader = FileUploadHdl(form.cleaned_data['stu_pic'],  form.cleaned_data['stu_attachment'],stu)
             stu.resident_id = form.cleaned_data['stu_id']
             stu.name = form.cleaned_data['stu_name']

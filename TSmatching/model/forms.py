@@ -113,4 +113,4 @@ class EditForm(forms.Form):
                                         'placeholder':'请完成个人描述（200字以内）'
                                   }))
     stu_attachment = forms.FileField(required=False)
-    stu_pic = forms.FileField()
+    stu_pic = forms.FileField(required=False)
