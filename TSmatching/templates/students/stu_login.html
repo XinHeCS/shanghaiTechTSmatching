@@ -47,6 +47,7 @@
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
+
 </style>
 {% endblock %}
 
@@ -70,7 +71,7 @@
         <div id="navbar" class="collapse navbar-collapse" style="color: #2e6da4">
             <div class="navbar-right">
           <div class="btn-group">
-              <button type="button" onclick="window.location.href='./register'" class="btn btn-default navbar-btn navbar-right">Register</button>
+              <button type="button" onclick="window.location.href='{% url 'stu_register' %}'" class="btn btn-default navbar-btn navbar-right">Register</button>
           </div>
                 </div>
         </div><!--/.nav-collapse -->
