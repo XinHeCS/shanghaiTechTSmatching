@@ -65,12 +65,22 @@ class TeacherChangePwdForm(forms.Form):
                                   }))
 
 class EditForm(forms.Form):
+    BIRTH_YEAR_CHOICES = ('1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001')
     stu_name = forms.CharField(label='姓名:', max_length='20', required=True, strip=True,
     widget = forms.TextInput(attrs={
         'class': 'form-control',
         'placeholder': '输入姓名',
     })
     )
+    stu_sex = forms.ChoiceField(label='性别:', required=True, widget=forms.Select(attrs={
+        'class':'form-control'
+    }),
+                                choices=(('1', '男',), ('0', '女',)))
+    # stu_birth = forms.DateField(label='出生日期:', widget=forms.DateInput(attrs={
+    #     'class': 'form-control',
+    #     'placeholder': '年-月-日'
+    # }))
+    stu_birth = forms.DateField(label='出生日期:', widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES))
     stu_id = forms.CharField(label='身份证号：'
                              , max_length='18', required=True, strip=True,
                              widget=forms.TextInput(attrs={
@@ -78,14 +88,7 @@ class EditForm(forms.Form):
                                  'placeholder': '输入身份证号'
                              })
                              )
-    stu_sex = forms.ChoiceField(label='性别:', required=True, widget=forms.Select(attrs={
-        'class':'form-control'
-    }),
-                                choices=(('1', '男',), ('0', '女',)))
-    stu_birth = forms.DateField(label='出生日期:', widget=forms.DateInput(attrs={
-        'class': 'form-control',
-        'placeholder': '年-月-日'
-    }))
+
     stu_email = forms.EmailField(label='电子邮箱：',
                                  widget=forms.EmailInput(attrs={'class':'form-control',
                                                                 'placeholder':'邮箱'}))

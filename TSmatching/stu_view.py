@@ -85,7 +85,6 @@ def stu_edit(request):
         form.encoding = 'utf-8'
         print(form.is_valid())
         if form.is_valid():
-
             uploader = FileUploadHdl(form.cleaned_data['stu_pic'],  form.cleaned_data['stu_attachment'],stu)
             stu.resident_id = form.cleaned_data['stu_id']
             stu.name = form.cleaned_data['stu_name']
@@ -101,6 +100,8 @@ def stu_edit(request):
             stu.save()
             uploader.save()
             return render(request, 'students/stu_edit.html', {'form': form, 'info': "个人信息已修改"})
+        else:
+            return render(request, 'students/stu_edit.html', {'form': form, 'info': "格式不正确"})
     return render(request, 'students/stu_edit.html', {'form':form})
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
