@@ -1,16 +1,15 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.auth import update_session_auth_hash
-from django.db.models import QuerySet
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 from .model.forms import RegisterForm, LoginForm, EditForm, PasswordChangeForm
 from .model.models import Students, Teachers, Selection
 from .model.utility import Captcha, FileUploadHdl
-from django.views.generic.edit import UpdateView
 import io
+
+
 # Log student in.
 def stu_login(request):
     if request.method == 'POST':
@@ -128,6 +127,9 @@ def select_teacher(request):
         selection2 = int(request.POST.get('t2'))+1
         selection3 = int(request.POST.get('t3'))+1
         if selection1 != selection2 and selection1 !=selection3 and selection2 != selection3:
+            if Selection.objects.filter(student_id=request.user.username).count() == 0:
+                Selection.objects.create(student_id=request.user.username)
+            stu_selection = Selection.objects.get(student_id=request.user.username)
             stu_selection.first_id = selection1
             stu_selection.second_id = selection2
             stu_selection.third_id = selection3
