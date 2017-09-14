@@ -199,8 +199,11 @@ class Captcha:
         return (random.randint(32, 127), random.randint(32, 127), random.randint(32, 127))
 
     def captcha_generation(self):
-        if platform.system() is "Windows":
+        # print(platform.system())
+        if platform.system() == "Windows":
             font = ImageFont.truetype('C:\\Windows\\Fonts\\Arial.ttf', 36)
+        elif platform.system() == "Linux":
+            font = ImageFont.truetype('UbuntuMono-R.ttf', 36)
         else:
             font = ImageFont.truetype('Arial.ttf', 36)
         draw = ImageDraw.Draw(self.image)
