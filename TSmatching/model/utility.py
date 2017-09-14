@@ -3,7 +3,7 @@ from .models import Students, Teachers, Selection
 from .forms import TeacherChangePwdForm
 import random
 import os
-
+import platform
 # This class is used for checking the teacher users
 # update the data of teacher in the database
 class TeacherHandle:
@@ -199,7 +199,10 @@ class Captcha:
         return (random.randint(32, 127), random.randint(32, 127), random.randint(32, 127))
 
     def captcha_generation(self):
-        font = ImageFont.truetype('Arial.ttf', 36)
+        if platform.system() is "Windows":
+            font = ImageFont.truetype('C:\\Windows\\Fonts\\Arial.ttf', 36)
+        else:
+            font = ImageFont.truetype('Arial.ttf', 36)
         draw = ImageDraw.Draw(self.image)
         for x in range(self.__width):
             for y in range(self.__height):
