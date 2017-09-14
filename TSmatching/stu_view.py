@@ -59,7 +59,10 @@ def main_page(request):
     #Students.objects.get_or_create(user_name=request.user.username)
     stu_profile = Students.objects.get(user_name=request.user.username)
     name = stu_profile.name
-    return render(request, 'students/main_page.html',{'name':name, 'stu':stu_profile})
+    stu_status = "被录取" if stu_profile.accepted else "尚未录取"
+    return render(request, 'students/main_page.html',{'name':name,
+                                                      'stu':stu_profile,
+                                                      'admission_status':stu_status})
 
 @login_required(login_url='/student/login/', redirect_field_name = None)
 def stu_edit(request):
@@ -121,8 +124,12 @@ def select_teacher(request):
         s1 = Teachers.objects.get(id=stu_selection.first_id).name
         s2 = Teachers.objects.get(id=stu_selection.second_id).name
         s3 = Teachers.objects.get(id=stu_selection.third_id).name
+        s1_status = "【Rejected】" if stu_selection.first_rejected else ""
+        s2_status = "【Rejected】" if stu_selection.second_rejected else ""
+        s3_status = "【Rejected】" if stu_selection.third_rejected else ""
     except Exception:
         s1,s2,s3 = "尚未选择", "尚未选择", "尚未选择"
+        s1_status, s2_status, s3_status = " ", " ", " "
     # the form returns selected teacher's id, and show teacher's name in main page
     if request.method == "POST":
         selection1 = int(request.POST.get('t1'))+1
@@ -146,6 +153,9 @@ def select_teacher(request):
                                                                'first_teacher':s1,
                                                                'second_teacher': s2,
                                                                'third_teacher': s3,
+                                                               'first_status': s1_status,
+                                                               'second_status': s2_status,
+                                                               'third_status': s3_status,
                                                                'error':err
                                                                })
 
